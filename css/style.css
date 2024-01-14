@@ -1,0 +1,332 @@
+:root {
+    --color-hue: 187;
+    --color-sat: 60%;
+    --color-lit: 34%;
+    --color-alpha: 0.95;
+    --color-accent-safe: hsla(187 60% 34% / 0.95);
+}
+
+:root {
+    --header-height: 55px;
+    --hue-modal: 191;
+    --dash-width: 100vw;
+    --dash-side-margin: 20px;
+    --dash-vertical-margin: 11px;
+    --bottom-side-width: auto;
+    --top-and-bottom-row-min-height: 60px;
+    --safe-zone-padding: 7px;
+    --app-padding: 21px;
+    --app-dash-padding: 0.625rem;
+    --border-radius: 5px;
+    --dash-metric-side-padding: 10px;
+    --form-bottom-margin: 26px;
+    --form-element-margin: 1.2rem;
+    --form-element-margin-small: 0.75rem;
+    --form-element-padding: 13px;
+    --form-label-bottom-margin: 6px;
+    --font-size-greeting: 3.375rem;
+    --font-default: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --default-icon-size: 13px;
+    --color-hue: 0;
+    --color-sat: 0%;
+    --color-lit: 50%;
+    --color-alpha: 1;
+    --color-accent: hsl(var(--color-hue) var(--color-sat) var(--color-lit) / var(--color-alpha));
+    --color-brand-hsl: 183 81% 35%;
+    --color-brand: hsl(var(--color-brand-hsl));
+    --color-badge-plus: #4dbf40;
+    --color-badge-team: #42c4dc;
+    --color-warn: orange;
+    --color-error: #e12e11;
+    --color-success: #4dbf40;
+    --color-mark-hsl: 48 96% 80%;
+    --color-mark: hsl(var(--color-mark-hsl));
+    --a-show-full-duration: 0.3s;
+    --a-show-full-curve: ease-out;
+    --a-curve: ease;
+    --a-fast: 0.15s;
+    --a-default: all var(--a-fast) var(--a-curve);
+    --app-edge-padding: 10px;
+}
+
+
+html {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+::-webkit-scrollbar {
+    height: 13px;
+    width: 13px;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 10.5px;
+    line-height: 10.5px;
+    letter-spacing: -0.4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    overflow: hidden;
+}
+
+form,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    overflow: hidden;
+    filter: brightness(60%);
+}
+
+#top_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    padding: 14.4px;
+    font-size: 15px;
+    opacity: 80%;
+}
+
+#top_area>span {
+    margin-bottom: 10px;
+}
+
+#middle_area {
+    position: relative;
+    width: 620px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form {
+    top: 250px;
+    position: absolute;
+    width: 610px;
+}
+
+
+#login-form span {
+    display: inline-block;
+    height: 40px;
+    padding-bottom: 15px;
+    font-size: 54px;
+    font-weight: 400;
+}
+
+
+#login-input {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-bottom: 3px solid #fff;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 61px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#login-form .input:last-child {
+    --h-padding: 23px;
+    --v-padding: 9px;
+    width: 120px;
+    height: 36.5px;
+    padding: var(--v-padding) var(--h-padding) calc(var(--v-padding) + 1px);
+    margin-top: 70px;
+    background: rgba(0, 0, 0, .15);
+    border: 1.5px solid rgba(255, 255, 255, .7);
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 500;
+    outline: 0;
+    position: relative;
+    left: 250px;
+}
+
+
+
+#clock {
+    position: absolute;
+    top: 200px;
+    font-size: 170px;
+    letter-spacing: -5px;
+    font-weight: 400;
+    opacity: 80%;
+}
+
+#greeting {
+    position: absolute;
+    top: 360px;
+    font-size: 60px;
+    letter-spacing: -5px;
+    font-weight: 550;
+}
+
+#goal_form {
+    position: absolute;
+    top: 430px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+#goal_form span {
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#goal_form .input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-bottom: 3px solid #fff;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+#goal_list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 510px;
+    width: 580px;
+    list-style: none;
+    font-size: 30px;
+}
+
+#goal_list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+#goal_list li.start {
+    display: flex;
+    align-items: flex-start;
+}
+
+#goal_list li span {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    padding-top: 15px;
+    width: 480px;
+    height: 35px;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.customCheckbox {
+    display: none;
+}
+
+.customCheckbox[type="checkbox"]+label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: url(../img/unchecked.png);
+    background-size: 30px, 30px;
+}
+
+.customCheckbox[type="checkbox"]:checked+label::after {
+    content: "";
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../img/checked.png);
+    background-size: 30px, 30px;
+}
+
+.customButton {
+    display: none;
+}
+
+#goal_list li:hover .customButton {
+    display: block;
+    width: 32px;
+    height: 30px;
+    margin-top: 5px;
+    background: none;
+    border-radius: 30%;
+    color: white;
+    border-color: white;
+    font-weight: 900;
+    font-size: 10px;
+}
+
+
+#quote {
+    position: absolute;
+    top: 680px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#quote span:last-child {
+    margin-top: 15px;
+}
