@@ -23,7 +23,6 @@ function onLoginSubmit(event) {
 
     clock.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
-    quotes.classList.remove(HIDDEN_CLASSNAMES);
 }
 
 
@@ -47,6 +46,5 @@ if (savedUsername === null) {
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
     greeting.classList.remove(HIDDEN_CLASSNAMES);
     paintGreetings(savedUsername);
-    paintQuote()
     // show the greetings 
 }

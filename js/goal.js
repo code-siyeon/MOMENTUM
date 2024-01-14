@@ -5,6 +5,40 @@ const goalList = document.getElementById("goal_list");
 
 
 
+function createDivElement(className) {
+    const div = document.createElement("div");
+    div.className = className;
+    return div;
+}
+
+function createButtonElement() {
+    const button = document.createElement("button");
+    button.className = "customButton";
+    button.innerText = "X";
+    button.addEventListener("click", deleteGoal);
+    return button;
+}
+
+function createCheckboxElement(id) {
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = "customCheckbox" + id;
+    checkbox.className = "customCheckbox";
+    return checkbox;
+}
+
+function createLabelElement(id) {
+    const label = document.createElement("label");
+    label.htmlFor = id;
+    return label;
+}
+
+function createSpanElement(text) {
+    const span = document.createElement("span");
+    span.innerText = text;
+    return span;
+}
+
 const GOAL_KEY = "goals";
 const HIDDEN_CLASSNAME = "hidden";
 
@@ -23,8 +57,64 @@ function deleteGoal(event) {
     saveGoals();
 }
 
-
 function paintGoal(newGoal) {
+    const li = document.createElement("li");
+    li.id = newGoal.id;
+
+    const start = createDivElement("start");
+    const checkbox = createCheckboxElement(newGoal.id);
+    const checkboxLabel = createLabelElement(checkbox.id);
+    const span = createSpanElement(newGoal.text);
+    const button = createButtonElement();
+
+    start.appendChild(checkbox);
+    start.appendChild(checkboxLabel);
+    start.appendChild(span);
+
+    li.appendChild(start);
+    li.appendChild(button);
+
+    goalList.appendChild(li);
+}
+
+
+function handleGoalSubmit() {
+    event.preventDefault();
+    if (goals.length >= 3) {
+        alert('목표는 최대 3개까지만 설정할 수 있습니다.');
+        return;
+    };
+    const newGoal = goInput.value;
+
+    goInput.value = "";
+    const newGoalObj = {
+        text: newGoal,
+        id: Date.now(),
+    };
+    goals.push(newGoalObj);
+    paintGoal(newGoalObj);
+    saveGoals();
+};
+
+
+goalForm.addEventListener("submit", handleGoalSubmit);
+
+const storageGoals = localStorage.getItem(GOAL_KEY);
+
+
+
+if (storageGoals !== null) {
+    const parsedGoals = JSON.parse(storageGoals);
+    goals = parsedGoals
+    parsedGoals.forEach(paintGoal);
+}
+
+
+
+
+
+
+/*function paintGoal(newGoal) {
     const li = document.createElement("li")
     li.id = newGoal.id;
     const start = document.createElement("div");
@@ -55,41 +145,5 @@ function paintGoal(newGoal) {
     start.appendChild(checkboxLabel);
     start.appendChild(span);
     li.appendChild(button);
-
-
 }
-
-
-
-
-
-function handleGoalSubmit() {
-    event.preventDefault();
-    if (goals.length >= 3) {
-        alert('목표는 최대 3개까지만 설정할 수 있습니다.');
-        return;
-    };
-    const newGoal = goInput.value;
-
-    goInput.value = "";
-    const newGoalObj = {
-        text: newGoal,
-        id: Date.now(),
-    };
-    goals.push(newGoalObj);
-    paintGoal(newGoalObj);
-    saveGoals();
-};
-
-
-goalForm.addEventListener("submit", handleGoalSubmit);
-
-const storageGoals = localStorage.getItem(GOAL_KEY);
-
-
-
-if (storageGoals !== null) {//입력했을때
-    const parsedGoals = JSON.parse(storageGoals);
-    goals = parsedGoals
-    parsedGoals.forEach(paintGoal);
-}
+*/

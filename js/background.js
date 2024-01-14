@@ -19,4 +19,7 @@ const bgImages = document.createElement("img")
 
 bgImages.id = "backgroundImage";
 bgImages.src = `img/${randomImages}`;
-document.body.appendChild(bgImages);
+
+
+const main = document.querySelector('main');
+main.appendChild(bgImages);
