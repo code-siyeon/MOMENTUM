@@ -21,5 +21,5 @@ bgImages.id = "backgroundImage";
 bgImages.src = `img/${randomImages}`;
 
 
-const main = document.querySelector('main');
-main.appendChild(bgImages);
+const body = document.querySelector('body');
+body.appendChild(bgImages);
