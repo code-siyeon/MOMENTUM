@@ -26,17 +26,19 @@ function onLoginSubmit(event) {
     quote.classList.remove(HIDDEN_CLASSNAMES);
 }
 
+
 function paintGreetings(username) {
     greeting.innerText = `Hello, ${username}.`;
     greeting.classList.remove(HIDDEN_CLASSNAMES);
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
 
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     loginForm.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.add(HIDDEN_CLASSNAMES);
+    quote.classList.add(HIDDEN_CLASSNAMES);
     loginForm.addEventListener("submit", onLoginSubmit);
     // show the form
 } else {

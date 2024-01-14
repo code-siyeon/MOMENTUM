@@ -65,8 +65,8 @@ function paintGoal(newGoal) {
 
 function handleGoalSubmit() {
     event.preventDefault();
-    if (goals.length >= 4) {
-        alert('목표는 최대 4개까지만 설정할 수 있습니다.');
+    if (goals.length >= 3) {
+        alert('목표는 최대 3개까지만 설정할 수 있습니다.');
         return;
     };
     const newGoal = goInput.value;

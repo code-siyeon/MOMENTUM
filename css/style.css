@@ -132,7 +132,7 @@ main {
 
 #middle_area {
     position: relative;
-    width: 620px;
+    width: 720px;
     padding: 0 40px;
     display: flex;
     flex-direction: column;
@@ -171,38 +171,35 @@ main {
 }
 
 #login-form .input:last-child {
-    --h-padding: 23px;
-    --v-padding: 9px;
+    left: 250px;
     width: 120px;
     height: 36.5px;
-    padding: var(--v-padding) var(--h-padding) calc(var(--v-padding) + 1px);
     margin-top: 70px;
+    padding: 8px 9px 10px;
     background: rgba(0, 0, 0, .15);
-    border: 1.5px solid rgba(255, 255, 255, .7);
+    border: 2px solid rgba(255, 255, 255, .7);
     border-radius: 50px;
     color: #fff;
     cursor: pointer;
-    font-size: 13.5px;
-    font-weight: 500;
-    outline: 0;
+    font-size: 15px;
+    font-weight: 700;
     position: relative;
-    left: 250px;
 }
 
 
 
 #clock {
     position: absolute;
-    top: 200px;
+    top: 180px;
     font-size: 170px;
     letter-spacing: -5px;
     font-weight: 400;
-    opacity: 80%;
+    opacity: 90%;
 }
 
 #greeting {
     position: absolute;
-    top: 360px;
+    top: 340px;
     font-size: 60px;
     letter-spacing: -5px;
     font-weight: 550;
@@ -210,7 +207,7 @@ main {
 
 #goal_form {
     position: absolute;
-    top: 430px;
+    top: 410px;
     font-weight: 400;
     text-align: center;
 }
@@ -240,7 +237,7 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 510px;
+    top: 490px;
     width: 580px;
     list-style: none;
     font-size: 30px;
@@ -317,7 +314,7 @@ main {
 
 #quote {
     position: absolute;
-    top: 680px;
+    top: 600px;
     width: 900px;
     display: flex;
     flex-direction: column;
