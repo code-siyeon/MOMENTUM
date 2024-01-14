@@ -61,10 +61,17 @@ const quotes = [
     }
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
 
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+function paintQuote() {
+    const quote = document.querySelector("#quote span:first-child");
+    const author = document.querySelector("#quote span:last-child");
 
-quote.innerText = `"${randomQuote.quote}"`;
-author.innerText = randomQuote.author;
+    if (savedUsername !== null) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quote.innerText = `"${randomQuote.quote}"`;
+        author.innerText = randomQuote.author;
+    } else {
+        quote.innerText = "";
+        author.innerText = "";
+    }
+}

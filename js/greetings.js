@@ -23,7 +23,7 @@ function onLoginSubmit(event) {
 
     clock.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
-    quote.classList.remove(HIDDEN_CLASSNAMES);
+    quotes.classList.remove(HIDDEN_CLASSNAMES);
 }
 
 
@@ -37,15 +37,16 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     loginForm.classList.remove(HIDDEN_CLASSNAMES);
-    goal_form.classList.add(HIDDEN_CLASSNAMES);
-    quote.classList.add(HIDDEN_CLASSNAMES);
     loginForm.addEventListener("submit", onLoginSubmit);
+    goal_form.classList.add(HIDDEN_CLASSNAMES);
+    paintQuote()
+
     // show the form
 } else {
     clock.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
-    quote.classList.remove(HIDDEN_CLASSNAMES);
     greeting.classList.remove(HIDDEN_CLASSNAMES);
     paintGreetings(savedUsername);
+    paintQuote()
     // show the greetings 
 }
