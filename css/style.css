@@ -18,18 +18,16 @@ html,
 body {
     margin: 0;
     padding: 0;
-    min-width: 100%;
-    min-height: 100%;
-    color: white;
     font-size: 10.5px;
     line-height: 10.5px;
     letter-spacing: -0.4px;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
-}
+
 
 form,
 ul {
@@ -52,7 +50,6 @@ main {
 #backgroundImage {
     position: absolute;
     top: 0;
-    left: 0;
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
