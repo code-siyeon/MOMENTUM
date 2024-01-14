@@ -257,7 +257,7 @@ main {
 
 #quote {
     position: absolute;
-    top: 600px;
+    top: 580px;
     width: 900px;
     display: flex;
     flex-direction: column;
