@@ -33,10 +33,12 @@ ul {
 
 main {
     position: absolute;
-    left: 15vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
 }
 
 
@@ -44,9 +46,17 @@ main {
     display: none;
 }
 
+#backgroundBorder {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
 
 #backgroundImage {
-    position: absolute;
+    position: relative;
     /* width: 100vw; 
     height: 1189px;*/
     width: 2560px;
@@ -271,31 +281,6 @@ main {
 }
 
 @media screen and (max-width: 2559px) {
-    #backgroundBorder {
-        position: absolute;
-        overflow: hidden;
-        width: 100vw;
-        height: 100vh;
-    }
-
-
-    #backgroundImage {
-        position: relative;
-        width: 1536px;
-        height: 737px;
-        right: 40vw;
-
-    }
-
-
-    main {
-        position: absolute;
-        height: 100vh;
-        justify-content: flex-end;
-        left: 17vw;
-
-    }
-
 
     #top_area {
         position: relative;
@@ -417,24 +402,5 @@ main {
 
     #quote span:last-child {
         margin-top: 3px;
-    }
-}
-
-@media screen and (max-width: 1023px) {
-    main {
-        left: 10vh;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    #backgroundImage {
-        position: relative;
-        min-width: 100%;
-        min-height: 100%;
-        right: 100vh;
-    }
-
-    main {
-        left: -20vh;
     }
 }
