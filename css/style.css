@@ -12,14 +12,16 @@
 
 html,
 body {
+    position: relative;
     margin: 0;
     padding: 0;
-    width: 100vw;
+    height: 100%;
     font-size: 10.5px;
     line-height: 10.5px;
     letter-spacing: -0.4px;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    overflow: hidden;
 }
 
 
@@ -30,8 +32,8 @@ ul {
 }
 
 main {
-    width: 100%;
-    height: 100vh;
+    position: absolute;
+    left: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,11 +47,10 @@ main {
 
 #backgroundImage {
     position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    object-fit: cover;
+    /* width: 100vw; 
+    height: 1189px;*/
+    width: 2560px;
+    height: 1329px;
     z-index: -1;
     filter: brightness(60%);
 }
@@ -269,59 +270,171 @@ main {
     margin-top: 15px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 2559px) {
+    #backgroundBorder {
+        position: absolute;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+    #backgroundImage {
+        position: relative;
+        width: 1536px;
+        height: 737px;
+        right: 40vw;
+
+    }
+
 
     main {
-        height: 80%;
+        position: absolute;
+        height: 100vh;
         justify-content: flex-end;
+        left: 17vw;
+
     }
 
 
     #top_area {
-        height: 70px;
-        font-size: 15px;
+        position: relative;
+        height: 60px;
+        padding: 14.4px;
+        font-size: 10px;
+    }
+
+    #top_area>span {
+        margin-bottom: 2px;
     }
 
     #middle_area {
-        height: 690px;
+        width: 100%;
     }
 
+    #login-form {
+        top: 270px;
+        width: 610px;
+    }
+
+
+    #login-form span {
+        height: 40px;
+        padding-bottom: 15px;
+        font-size: 54px;
+        font-weight: 400;
+    }
+
+
+    #login-input {
+        width: 100%;
+        font-size: 61px;
+    }
+
+    #login-form .input:last-child {
+        left: 250px;
+        width: 120px;
+        height: 36.5px;
+        margin-top: 70px;
+        padding: 8px 9px 10px;
+        font-size: 15px;
+
+    }
+
+
+
     #clock {
-        top: 180px;
-        font-size: 150px;
+        top: 100px;
+        font-size: 90px;
     }
 
     #greeting {
-        top: 330px;
-        font-size: 40px;
+        top: 180px;
+        font-size: 30px;
         letter-spacing: -2px;
     }
 
     #goal_form {
-        top: 420px;
+        top: 220px;
     }
 
 
-    #goal_form span,
-    #goal_form .input {
-        font-size: 30px;
+    #goal_form span {
+        padding-bottom: 5px;
+        font-size: 17px;
     }
 
     #goal_form .input {
-        width: 450px;
+        margin-top: 5px;
+        width: 250px;
+        font-size: 15px;
+        text-align: center;
     }
 
     #goal_list {
-        top: 500px;
-        width: 500px;
-        font-size: 20px;
+        top: 270px;
+        width: 230px;
+        font-size: 15px;
+    }
+
+    #goal_list li {
+        margin-top: 2px;
+    }
+
+    #goal_list li span {
+        margin-left: 10px;
+        padding-top: 1px;
+        height: 15px;
+        font-size: 13px;
+    }
+
+    .customCheckbox[type="checkbox"]+label {
+        width: 15px;
+        height: 15px;
+        background-size: 15px, 15px;
+    }
+
+    .customCheckbox[type="checkbox"]:checked+label::after {
+        font-size: 5px;
+        width: 15px;
+        height: 15px;
+        background: url(../img/checked.png);
+        background-size: 15px, 15px;
+    }
+
+    #goal_list li:hover .customButton {
+        margin-top: -3px;
+        padding: 0;
+        width: 15px;
+        height: 14px;
+        font-size: 7px;
     }
 
     #quote {
-        position: absolute;
-        margin: 0 auto;
-        width: 750px;
+        top: -23px;
+        font-size: 10px;
     }
 
+    #quote span:last-child {
+        margin-top: 3px;
+    }
+}
 
+@media screen and (max-width: 1023px) {
+    main {
+        left: 10vh;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #backgroundImage {
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
+        right: 100vh;
+    }
+
+    main {
+        left: -20vh;
+    }
 }

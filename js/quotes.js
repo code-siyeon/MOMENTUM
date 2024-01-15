@@ -1,14 +1,14 @@
 const quotes = [
     {
-        quote: "You will face many defeats in life, but never let yourself be defeated.",
+        quote: "You will face many defeats in life,\n but never let yourself be defeated.",
         author: "Maya Angelou",
     },
     {
-        quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        quote: "The greatest glory in living lies not in never falling,\n but in rising every time we fall.",
         author: "Nelson Mandela",
     },
     {
-        quote: "In the end, it’s not the years in your life that count. It’s the life in your years.",
+        quote: "In the end, it’s not the years in your life that count.\n It’s the life in your years.",
         author: "Abraham Lincoln",
     },
     {
@@ -16,7 +16,7 @@ const quotes = [
         author: "Helen Keller",
     },
     {
-        quote: "Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+        quote: "Many of life’s failures are people \nwho did not realize how close they were to success when they gave up.",
         author: "Thomas A. Edison",
     },
     {
@@ -24,7 +24,7 @@ const quotes = [
         author: "Helen Keller",
     },
     {
-        quote: "If you spend too much time thinking about a thing, you’ll never get it done.",
+        quote: "If you spend too much time thinking about a thing, \nyou’ll never get it done.",
         author: "Bruce Lee",
     },
     {
@@ -36,11 +36,11 @@ const quotes = [
         author: " Lilly Pulitzer",
     },
     {
-        quote: "The two most important days in your life are the day you are born and the day you find out why.",
+        quote: "The two most important days in your life are the day you are born\n and the day you find out why.",
         author: "Mark Twain",
     },
     {
-        quote: "Love, free as air at sight of human ties, Spreads his light wings, and in a moment flies.",
+        quote: "Love, free as air at sight of human ties,\n Spreads his light wings, and in a moment flies.",
         author: "Alexander Pope",
     },
     {
@@ -48,15 +48,15 @@ const quotes = [
         author: "William Shakespeare",
     },
     {
-        quote: "To love and win is the best thing. To love and lose, is the next best thing.",
+        quote: "To love and win is the best thing.\n To love and lose, is the next best thing.",
         author: "William Thackeray",
     },
     {
-        quote: "If you would be loved, love and be lovable. ",
+        quote: "If you would be loved,\n love and be lovable. ",
         author: "Benjamin Franklin",
     },
     {
-        quote: "We come to love not by finding a perfect person, but by learning to see an imperfect person perfectly. ",
+        quote: "We come to love not by finding a perfect person,\n but by learning to see an imperfect person perfectly. ",
         author: "Anonymous",
     }
 ];

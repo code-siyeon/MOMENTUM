@@ -15,11 +15,13 @@ const images = [
 
 const randomImages = images[Math.floor(Math.random() * images.length)];
 
+const bgBorder = document.createElement("div")
 const bgImages = document.createElement("img")
 
+bgBorder.id = "backgroundBorder";
 bgImages.id = "backgroundImage";
 bgImages.src = `img/${randomImages}`;
 
-
-const body = document.querySelector('body');
-body.appendChild(bgImages);
+const body = document.querySelector("body")
+body.appendChild(bgBorder)
+bgBorder.appendChild(bgImages);
