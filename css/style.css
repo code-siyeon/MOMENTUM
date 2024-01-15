@@ -31,8 +31,7 @@ ul {
 
 main {
     width: 100%;
-    height: 100%;
-    display: flex;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,19 +48,14 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
     object-fit: cover;
     z-index: -1;
-    overflow: auto;
     filter: brightness(60%);
 }
 
-@media screen and (max-width: 767px) {
-    #backgroundImage {
-        background-size: auto 100%;
-        background-position: center center;
-        background-attachment: scroll;
-    }
-}
+
+
 
 #top_area {
     display: flex;
@@ -80,13 +74,12 @@ main {
 
 #middle_area {
     position: relative;
-    width: 720px;
-    height: 820px;
+    width: 100%;
+    height: 660px;
     padding: 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
 }
 
 #login-form {
@@ -139,7 +132,7 @@ main {
 
 #clock {
     position: absolute;
-    top: 180px;
+    top: 210px;
     font-size: 170px;
     letter-spacing: -5px;
     font-weight: 400;
@@ -148,7 +141,7 @@ main {
 
 #greeting {
     position: absolute;
-    top: 340px;
+    top: 360px;
     font-size: 60px;
     letter-spacing: -5px;
     font-weight: 550;
@@ -156,7 +149,7 @@ main {
 
 #goal_form {
     position: absolute;
-    top: 410px;
+    top: 450px;
     font-weight: 400;
     text-align: center;
 }
@@ -170,8 +163,9 @@ main {
 }
 
 #goal_form .input {
+    display: block;
     margin-top: 10px;
-    width: 100%;
+    width: 610px;
     padding: 0;
     border: none;
     border-bottom: 3px solid #fff;
@@ -186,7 +180,7 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 490px;
+    top: 530px;
     width: 580px;
     list-style: none;
     font-size: 30px;
@@ -209,7 +203,6 @@ main {
     position: relative;
     margin-left: 20px;
     padding-top: 15px;
-    width: 480px;
     height: 35px;
     font-size: 25px;
     white-space: nowrap;
@@ -263,7 +256,7 @@ main {
 
 #quote {
     position: relative;
-    width: 900px;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -274,4 +267,61 @@ main {
 
 #quote span:last-child {
     margin-top: 15px;
+}
+
+@media screen and (max-width: 767px) {
+
+    main {
+        height: 80%;
+        justify-content: flex-end;
+    }
+
+
+    #top_area {
+        height: 70px;
+        font-size: 15px;
+    }
+
+    #middle_area {
+        height: 690px;
+    }
+
+    #clock {
+        top: 180px;
+        font-size: 150px;
+    }
+
+    #greeting {
+        top: 330px;
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+    #goal_form {
+        top: 420px;
+    }
+
+
+    #goal_form span,
+    #goal_form .input {
+        font-size: 30px;
+    }
+
+    #goal_form .input {
+        width: 450px;
+    }
+
+    #goal_list {
+        top: 500px;
+        width: 500px;
+        font-size: 20px;
+    }
+
+    #quote {
+        position: absolute;
+        margin: 0 auto;
+        width: 750px;
+    }
+
+
 }
