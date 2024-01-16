@@ -1,30 +1,30 @@
 const quotes = [
     {
-        quote: "You will face many defeats in life,\n but never let yourself be defeated.",
-        author: "Maya Angelou",
+        quote: "The course of true love never did run smooth.",
+        author: "William Shakespeare",
     },
     {
-        quote: "The greatest glory in living lies not in never falling,\n but in rising every time we fall.",
-        author: "Nelson Mandela",
+        quote: "Do not try to be original, just try to be good.",
+        author: "Paul Rand",
     },
     {
-        quote: "In the end, it’s not the years in your life that count.\n It’s the life in your years.",
-        author: "Abraham Lincoln",
+        quote: "Do not be afraid to give up the good to go for the great.",
+        author: "John D. Rockefeller",
     },
     {
         quote: "Life is either a daring adventure or nothing at all",
-        author: "Helen Keller",
+        author: "Thomas Jefferson",
     },
     {
-        quote: "Many of life’s failures are people \nwho did not realize how close they were to success when they gave up.",
-        author: "Thomas A. Edison",
+        quote: "I find that the harder I work, the more luck I seem to have.",
+        author: "Anonymous",
     },
     {
-        quote: "Life is either a great adventure or nothing.",
-        author: "Helen Keller",
+        quote: " The road to success and the road to failure are almost exactly the same.",
+        author: "Colin R. Davis",
     },
     {
-        quote: "If you spend too much time thinking about a thing, \nyou’ll never get it done.",
+        quote: "Stop chasing the money and start chasing the passion.",
         author: "Bruce Lee",
     },
     {
@@ -36,28 +36,28 @@ const quotes = [
         author: " Lilly Pulitzer",
     },
     {
-        quote: "The two most important days in your life are the day you are born\n and the day you find out why.",
-        author: "Mark Twain",
+        quote: "I never dreamed about success, I worked for it.",
+        author: "Estee Lauder",
     },
     {
-        quote: "Love, free as air at sight of human ties,\n Spreads his light wings, and in a moment flies.",
-        author: "Alexander Pope",
+        quote: "The secret of getting ahead is getting started.",
+        author: "Mark Twain",
     },
     {
         quote: "Love asks me no questions, and gives me endless support.",
         author: "William Shakespeare",
     },
     {
-        quote: "To love and win is the best thing.\n To love and lose, is the next best thing.",
-        author: "William Thackeray",
+        quote: "Courage is being scared to death… and saddling up anyway.",
+        author: "John Wayne",
     },
     {
-        quote: "If you would be loved,\n love and be lovable. ",
+        quote: "If you would be loved, love and be lovable.",
         author: "Benjamin Franklin",
     },
     {
-        quote: "We come to love not by finding a perfect person,\n but by learning to see an imperfect person perfectly. ",
-        author: "Anonymous",
+        quote: "If you are not willing to risk the usual, you will have to settle for the ordinary.",
+        author: "Jim Rohn",
     }
 ];
 

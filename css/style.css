@@ -20,7 +20,7 @@ body {
     line-height: 10.5px;
     letter-spacing: -0.4px;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow: hidden;
 }
 
@@ -29,6 +29,10 @@ form,
 ul {
     margin: 0;
     padding: 0;
+}
+
+.hidden {
+    display: none;
 }
 
 main {
@@ -41,11 +45,6 @@ main {
     height: 100vh;
 }
 
-
-.hidden {
-    display: none;
-}
-
 #backgroundBorder {
     position: absolute;
     display: flex;
@@ -53,16 +52,26 @@ main {
     align-items: center;
     width: 100vw;
     height: 100vh;
+    z-index: -1;
+}
+
+#backgroundOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    background-image: url(../img/overlay.png);
+    background-size: 2560px, 1329px;
+    filter: brightness(20%);
 }
 
 #backgroundImage {
     position: relative;
-    /* width: 100vw; 
-    height: 1189px;*/
     width: 2560px;
     height: 1329px;
-    z-index: -1;
-    filter: brightness(60%);
+    filter: brightness(80%);
 }
 
 
@@ -73,21 +82,20 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 80px;
+    height: 12vh;
     padding: 14.4px;
-    font-size: 15px;
+    font-size: 2.5vh;
     opacity: 80%;
 }
 
 #top_area>span {
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
 }
 
 #middle_area {
     position: relative;
     width: 100%;
-    height: 660px;
-    padding: 0 40px;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,28 +147,31 @@ main {
     position: relative;
 }
 
-
+#hello-clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
 
 #clock {
-    position: absolute;
-    top: 210px;
-    font-size: 170px;
-    letter-spacing: -5px;
-    font-weight: 400;
+    position: relative;
+    top: 3vh;
+    font-size: 16vh;
+    font-weight: 500;
     opacity: 90%;
 }
 
 #greeting {
-    position: absolute;
-    top: 360px;
-    font-size: 60px;
-    letter-spacing: -5px;
-    font-weight: 550;
+    position: relative;
+    top: 15vh;
+    font-size: 8vh;
+    font-weight: 500;
 }
 
 #goal_form {
-    position: absolute;
-    top: 450px;
+    position: relative;
     font-weight: 400;
     text-align: center;
 }
@@ -168,7 +179,6 @@ main {
 
 #goal_form span {
     display: inline-block;
-    padding-bottom: 15px;
     font-size: 40px;
     font-weight: 400;
 }
@@ -176,7 +186,7 @@ main {
 #goal_form .input {
     display: block;
     margin-top: 10px;
-    width: 610px;
+    width: 100%;
     padding: 0;
     border: none;
     border-bottom: 3px solid #fff;
@@ -190,33 +200,31 @@ main {
 #goal_list {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 530px;
-    width: 580px;
+    position: relative;
     list-style: none;
-    font-size: 30px;
 }
 
 #goal_list li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2px;
+    margin-top: 2vh;
 }
 
-#goal_list li.start {
+#goal_list .start {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #goal_list li span {
     display: inline-block;
     position: relative;
-    margin-left: 20px;
-    padding-top: 15px;
-    height: 35px;
-    font-size: 25px;
     white-space: nowrap;
+    margin: 0 2vh;
+    padding: 1vh;
+    width: 60vh;
+    font-size: 3vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -227,34 +235,33 @@ main {
 
 .customCheckbox[type="checkbox"]+label {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 3vh;
+    height: 3vh;
     position: relative;
     background: url(../img/unchecked.png);
-    background-size: 30px, 30px;
+    background-size: 3vh, 3vh;
 }
 
 .customCheckbox[type="checkbox"]:checked+label::after {
     content: "";
     font-size: 25px;
-    width: 30px;
-    height: 30px;
+    width: 3vh;
+    height: 3vh;
     text-align: center;
     position: absolute;
     left: 0;
     top: 0;
     background: url(../img/checked.png);
-    background-size: 30px, 30px;
+    background-size: 3vh, 3vh;
 }
 
-.customButton {
-    display: none;
-}
 
-#goal_list li:hover .customButton {
-    display: block;
-    width: 32px;
-    height: 30px;
+#goal_list .customButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vh;
+    height: 3vh;
     margin-top: 5px;
     background: none;
     border-radius: 30%;
@@ -272,135 +279,37 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    font-size: 18px;
+    font-size: 2vh;
     font-style: italic;
 }
 
 #quote span:last-child {
-    margin-top: 15px;
+    margin: 2vh 0;
 }
 
-@media screen and (max-width: 2559px) {
 
-    #top_area {
-        position: relative;
-        height: 60px;
-        padding: 14.4px;
-        font-size: 10px;
-    }
-
-    #top_area>span {
-        margin-bottom: 2px;
-    }
-
-    #middle_area {
-        width: 100%;
-    }
-
-    #login-form {
-        top: 270px;
-        width: 610px;
-    }
-
-
-    #login-form span {
-        height: 40px;
-        padding-bottom: 15px;
-        font-size: 54px;
-        font-weight: 400;
-    }
-
-
-    #login-input {
-        width: 100%;
-        font-size: 61px;
-    }
-
-    #login-form .input:last-child {
-        left: 250px;
-        width: 120px;
-        height: 36.5px;
-        margin-top: 70px;
-        padding: 8px 9px 10px;
-        font-size: 15px;
-
-    }
-
-
-
+@media screen and (max-width: 767px) {
     #clock {
-        top: 100px;
-        font-size: 90px;
+        top: 10vh;
+        font-size: 14.5vw;
     }
 
     #greeting {
-        top: 180px;
-        font-size: 30px;
-        letter-spacing: -2px;
+        top: 18vh;
+        font-size: 6.1vw;
     }
-
-    #goal_form {
-        top: 220px;
-    }
-
 
     #goal_form span {
-        padding-bottom: 5px;
-        font-size: 17px;
+        font-size: 4.7vw;
     }
 
     #goal_form .input {
-        margin-top: 5px;
-        width: 250px;
-        font-size: 15px;
-        text-align: center;
-    }
-
-    #goal_list {
-        top: 270px;
-        width: 230px;
-        font-size: 15px;
-    }
-
-    #goal_list li {
-        margin-top: 2px;
+        width: 70vw;
+        font-size: 3vh;
     }
 
     #goal_list li span {
-        margin-left: 10px;
-        padding-top: 1px;
-        height: 15px;
-        font-size: 13px;
-    }
-
-    .customCheckbox[type="checkbox"]+label {
-        width: 15px;
-        height: 15px;
-        background-size: 15px, 15px;
-    }
-
-    .customCheckbox[type="checkbox"]:checked+label::after {
-        font-size: 5px;
-        width: 15px;
-        height: 15px;
-        background: url(../img/checked.png);
-        background-size: 15px, 15px;
-    }
-
-    #goal_list li:hover .customButton {
-        margin-top: -3px;
-        padding: 0;
-        width: 15px;
-        height: 14px;
-        font-size: 7px;
-    }
-
-    #quote {
-        top: -23px;
-        font-size: 10px;
-    }
-
-    #quote span:last-child {
-        margin-top: 3px;
+        width: 65vw;
+        font-size: 3vh;
     }
 }
