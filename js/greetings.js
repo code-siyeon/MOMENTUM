@@ -19,8 +19,10 @@ function onLoginSubmit(event) {
     localStorage.setItem(USERNAME_KEY, username);
     paintGreetings(username);
 
+
     clock.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
+    document.getElementById("quote").style.display = "flex";
 }
 
 
@@ -34,15 +36,17 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 
 if (savedUsername === null) {
-    loginForm.classList.remove(HIDDEN_CLASSNAMES);
+    loginForm.style.display = "flex";
     loginForm.addEventListener("submit", onLoginSubmit);
     goal_form.classList.add(HIDDEN_CLASSNAMES);
     // show the form
 } else {
+    loginForm.classList.add(HIDDEN_CLASSNAMES);
     clock.classList.remove(HIDDEN_CLASSNAMES);
     goal_form.classList.remove(HIDDEN_CLASSNAMES);
+    goal_list.classList.remove(HIDDEN_CLASSNAMES);
     greeting.classList.remove(HIDDEN_CLASSNAMES);
-    quote.classList.remove(HIDDEN_CLASSNAMES);
+    document.getElementById("quote").style.display = "flex";
     paintGreetings(savedUsername);
     // show the greetings 
 }
