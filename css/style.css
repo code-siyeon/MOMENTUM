@@ -31,9 +31,7 @@ ul {
     padding: 0;
 }
 
-.hidden {
-    display: none;
-}
+
 
 .flex {
     display: flex;
@@ -47,6 +45,10 @@ main {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+}
+
+.hidden {
+    display: none;
 }
 
 #backgroundBorder {
@@ -114,21 +116,20 @@ main {
     align-items: center;
     position: absolute;
     top: 32vh;
-    width: 50.5vh;
+    width: 100vh;
 }
 
 
 #login_form span {
     display: inline-block;
-    font-size: 4.5vh;
-    font-weight: 400;
+    font-size: 9vh;
 }
 
 
 #login_input {
-    width: 100%;
+    width: 98%;
     padding: 0;
-    margin-top: 0.5vw;
+    margin-top: 1.5vw;
     border: none;
     border-bottom: 3px solid #fff;
     color: white;
@@ -201,7 +202,7 @@ main {
     background: none;
     outline: none;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -299,19 +300,19 @@ main {
 
 
 @media screen and (max-width: 767px) {
-    #login-form {
+    #login_form {
         width: 88%
     }
 
-    #login-form span {
+    #login_form span {
         font-size: 3.5vh;
     }
 
-    #login-input {
-        font-size: 5vh;
+    #login_input {
+        font-size: 4.6vh;
     }
 
-    #hello-clock {
+    #hello_clock {
         height: 59vh;
     }
 

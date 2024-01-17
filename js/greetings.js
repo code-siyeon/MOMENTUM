@@ -55,6 +55,7 @@ if (savedUsername === null) {
 
 // DOM 요소 선택
 const loginForm = document.querySelector("#login_form");
+const loginSpan = document.querySelector("#login_form > span");
 const loginInput = document.querySelector("#login_input");
 const greeting = document.querySelector("#greeting");
 
@@ -75,6 +76,7 @@ function onLoginSubmit(event) {
         return;
     }
     loginForm.classList.add(HIDDEN_CLASSNAME); //로그인 폼 숨김
+    loginSpan.classList.add(HIDDEN_CLASSNAME); //로그인 스팬 숨김
     loginInput.classList.add(HIDDEN_CLASSNAME); //로그인 인풋 숨김
     localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 사용자 이름 저장
     paintGreetings(username); // 인삿말 표시
@@ -82,7 +84,6 @@ function onLoginSubmit(event) {
 
 // 인삿말 표시 함수
 function paintGreetings(username) {
-    //loginForm.classList.add(HIDDEN_CLASSNAME); 
     greeting.innerText = `Hello, ${username}.`; // 인삿말 글자 설정
     greeting.classList.remove(HIDDEN_CLASSNAME); // 인삿말 표시
     clock.classList.remove(HIDDEN_CLASSNAME); // 시계 표시
@@ -96,6 +97,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     // 사용자 이름이 저장되지 않았으면 로그인 폼 표시
+    loginForm.classList.add(FLEX__CLASSNAME)
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginInput.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
