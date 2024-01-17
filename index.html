@@ -16,18 +16,20 @@
             <span class="hidden">by. si_yeon</span>
         </div>
         <div id="middle_area">
-            <form id="login-form" class="hidden">
+            <form id="login_form" class="hidden">
                 <span>Hello, what's your name?</span>
-                <input id="login-input" class="input" required maxlength="5" type="text" placeholder="" />
-                <input class="input" type="submit" value="Continue  >"></input>
+                <input id="login_input" class="input hidden" required maxlength="5" type="text" placeholder="" />
+                <input class="input hidden" type="submit" value="Continue  >"></input>
             </form>
-            <div id="hello-clock">
+
+            <div id="hello_clock">
                 <h2 id="clock" class="hidden">00:00:00</h2>
                 <h1 id="greeting" class="hidden"></h1>
+                <button id="logout_btn" class="hidden">Logout</button>
             </div>
             <form id="goal_form" class="hidden">
-                <span>What is your main goal for today?</span>
-                <input class="input" type="text" />
+                <span class="hidden">What is your main goal for today?</span>
+                <input class="input hidden" type="text" />
             </form>
             <ul id="goal_list" class="hidden"></ul>
         </div>
@@ -40,6 +42,7 @@
 
     <script src="js/background.js"></script>
     <script src="js/greetings.js"></script>
+    <script src="js/logout.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/goal.js"></script>
     <script src="js/quotes.js"></script>

@@ -5,13 +5,13 @@ const goalList = document.getElementById("goal_list");
 
 
 
-function createDivElement(className) {
+function createDivElement(className) { //div 생성
     const div = document.createElement("div");
     div.className = className;
     return div;
 }
 
-function createButtonElement() {
+function createButtonElement() { //삭제 버튼 생성
     const button = document.createElement("button");
     button.className = "customButton";
     button.innerText = "X";
@@ -19,7 +19,7 @@ function createButtonElement() {
     return button;
 }
 
-function createCheckboxElement(id) {
+function createCheckboxElement(id) { //체크박스
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "customCheckbox" + id;
@@ -40,7 +40,6 @@ function createSpanElement(text) {
 }
 
 const GOAL_KEY = "goals";
-const HIDDEN_CLASSNAME = "hidden";
 
 let goals = [];
 
@@ -111,10 +110,8 @@ if (storageGoals !== null) {
 
 
 
-
-
-
-/*function paintGoal(newGoal) {
+/*
+function paintGoal(newGoal) {
     const li = document.createElement("li")
     li.id = newGoal.id;
     const start = document.createElement("div");

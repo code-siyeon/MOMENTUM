@@ -35,6 +35,10 @@ ul {
     display: none;
 }
 
+.flex {
+    display: flex;
+}
+
 main {
     position: absolute;
     display: flex;
@@ -56,12 +60,11 @@ main {
 }
 
 #backgroundOverlay {
+    display: block;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     opacity: 1;
+    width: 2560px;
+    height: 1329px;
     background-image: url(../img/overlay.png);
     background-size: 2560px, 1329px;
     filter: brightness(20%);
@@ -101,7 +104,7 @@ main {
     align-items: center;
 }
 
-#login-form {
+#login_form {
     flex-direction: column;
     align-items: center;
     position: absolute;
@@ -110,17 +113,17 @@ main {
 }
 
 
-#login-form span {
+#login_form span {
     display: inline-block;
     font-size: 4.5vh;
     font-weight: 400;
 }
 
 
-#login-input {
+#login_input {
     width: 100%;
     padding: 0;
-    margin-top: 0.5vh;
+    margin-top: 0.5vw;
     border: none;
     border-bottom: 3px solid #fff;
     color: white;
@@ -130,7 +133,8 @@ main {
     outline: none;
 }
 
-#login-form .input:last-child {
+#login_form .input:last-child,
+#logout_btn {
     position: relative;
     width: 15vh;
     margin-top: 5vh;
@@ -144,7 +148,9 @@ main {
     font-weight: 700;
 }
 
-#hello-clock {
+
+
+#hello_clock {
     display: flex;
     flex-direction: column;
     justify-content: center;
