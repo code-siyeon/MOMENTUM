@@ -154,7 +154,10 @@ main {
     font-weight: 700;
 }
 
-
+#logout_btn {
+    position: relative;
+    top: 15vh
+}
 
 #hello_clock {
     display: flex;
