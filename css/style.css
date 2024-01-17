@@ -320,12 +320,12 @@ main {
     }
 
     #clock {
-        top: 12vh;
+        top: 3vh;
         font-size: 19vw;
     }
 
     #greeting {
-        top: 20vh;
+        top: 12vh;
         font-size: 10vw;
     }
 
@@ -335,8 +335,7 @@ main {
 
     #goal_form .input {
         position: relative;
-        left: 6px;
-        width: 87vw;
+        width: 92vw;
         font-size: 3vh;
         border-bottom: 2px solid #fff;
     }
