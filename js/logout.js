@@ -12,7 +12,8 @@ function onLogoutClick() {
     greeting.classList.add(HIDDEN_CLASSNAME); // 인삿말 숨김
     clock.classList.add(HIDDEN_CLASSNAME); // 시계숨김
     goalForm.classList.add(HIDDEN_CLASSNAME); // 목표 숨김
-    quote.style.display = "none"; // 인용구 숨김
+    goalList.classList.add(HIDDEN_CLASSNAME); // 목표 리스트 숨김
+    quote.classList.add(HIDDEN_CLASSNAME)
     logoutBtn.classList.add(HIDDEN_CLASSNAME); // 로그아웃 버튼 숨김
     loginInput.value = ""; // 로그인 입력 필드 초기화
     window.location.reload();

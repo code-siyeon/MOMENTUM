@@ -63,10 +63,15 @@ const quotes = [
 
 
 
-const quote = document.querySelector("#quote span:first-child");
+const wiseSaying = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-quote.innerText = `"${randomQuote.quote}"`;
+wiseSaying.innerText = `"${randomQuote.quote}"`;
 author.innerText = randomQuote.author;
 
+/*function displayQuote() {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quote.innerText = `"${randomQuote.quote}"`;
+    author.innerText = randomQuote.author;
+}*/
