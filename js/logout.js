@@ -14,7 +14,6 @@ function onLogoutClick() {
     goalForm.classList.add(HIDDEN_CLASSNAME); // 목표 숨김
     quote.style.display = "none"; // 인용구 숨김
     logoutBtn.classList.add(HIDDEN_CLASSNAME); // 로그아웃 버튼 숨김
-    loginForm.classList.remove(HIDDEN_CLASSNAME); // 로그인 폼 표시
-    loginInput.classList.remove(HIDDEN_CLASSNAME); // 로그인 인풋 표시
     loginInput.value = ""; // 로그인 입력 필드 초기화
+    window.location.reload();
 }

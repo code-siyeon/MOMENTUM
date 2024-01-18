@@ -88,6 +88,7 @@ main {
 
 
 #top_area {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -122,14 +123,15 @@ main {
 
 #login_form span {
     display: inline-block;
-    font-size: 9vh;
+    font-size: 6.6vh;
 }
 
 
 #login_input {
-    width: 98%;
+    position: relative;
+    width: 75%;
+    margin-top: 2vw;
     padding: 0;
-    margin-top: 1.5vw;
     border: none;
     border-bottom: 3px solid #fff;
     color: white;
@@ -138,6 +140,8 @@ main {
     background: none;
     outline: none;
 }
+
+
 
 #login_form .input:last-child,
 #logout_btn {
@@ -301,19 +305,36 @@ main {
     margin: 2vh 0;
 }
 
+@media screen and (max-width: 2559px) {
+    #backgroundOverlay {
+        width: 1440px;
+        height: 659px;
+        background-size: 1440px, 659px;
+    }
+
+    #backgroundImage {
+        width: 1440px;
+        height: 659px;
+    }
+}
 
 @media screen and (max-width: 767px) {
     #login_form {
-        width: 88%
+        width: 75%
     }
 
     #login_form span {
-        font-size: 3.5vh;
+        font-size: 4vh;
+        line-height: normal;
+        text-align: center;
     }
 
     #login_input {
+        width: 100%;
+        margin-top: 1vw;
         font-size: 4.6vh;
     }
+
 
     #hello_clock {
         height: 59vh;

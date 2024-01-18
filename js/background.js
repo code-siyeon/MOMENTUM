@@ -31,26 +31,20 @@ const mobileImg = document.querySelector("#mobileImage")
 const bgImages = document.querySelector("#backgroundImage")
 
 
-function updateBackgroundImage() {
-    if (window.innerWidth <= 767) {
-        // 모바일 화면
-        const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
-        mobileImg.src = `img/${mRandomImg}`;
-        bgImages.style.display = "none";
-    } else {
-        // 데스크톱 화면
-        const randomImages = images[Math.floor(Math.random() * images.length)];
-        bgImages.src = `img/${randomImages}`;
-        mobileImg.style.display = "none";
-    }
+if (window.innerWidth <= 767) {
+    // 모바일 화면
+    const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
+    mobileImg.src = `img/${mRandomImg}`;
+    bgImages.style.display = "none";
+} else {
+    // 데스크톱 화면
+    const randomImages = images[Math.floor(Math.random() * images.length)];
+    bgImages.src = `img/${randomImages}`;
+    mobileImg.style.display = "none";
 }
 
 
-// 페이지를 로드할 때 이미지 업데이트
-updateBackgroundImage();
 
-// 화면 크기를 바꿨을 때 이미지 업데이트
-window.addEventListener('resize', updateBackgroundImage);
 
 
 
