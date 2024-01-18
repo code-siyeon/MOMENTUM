@@ -75,21 +75,21 @@ function onLoginSubmit(event) {
         loginInput.focus(); // 입력 필드에 포커스를 다시 맞춤
         return;
     }
-    loginForm.classList.add(HIDDEN_CLASSNAME); //로그인 폼 숨김
-    loginSpan.classList.add(HIDDEN_CLASSNAME); //로그인 스팬 숨김
-    loginInput.classList.add(HIDDEN_CLASSNAME); //로그인 인풋 숨김
     localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 사용자 이름 저장
     paintGreetings(username); // 인삿말 표시
 }
 
 // 인삿말 표시 함수
 function paintGreetings(username) {
+    loginForm.classList.add(HIDDEN_CLASSNAME); //로그인 폼 숨김
+    loginSpan.classList.add(HIDDEN_CLASSNAME); //로그인 스팬 숨김
+    loginInput.classList.add(HIDDEN_CLASSNAME); //로그인 인풋 숨김
     greeting.innerText = `Hello, ${username}.`; // 인삿말 글자 설정
     greeting.classList.remove(HIDDEN_CLASSNAME); // 인삿말 표시
     clock.classList.remove(HIDDEN_CLASSNAME); // 시계 표시
     goal_form.classList.remove(HIDDEN_CLASSNAME); // 목표 입력 폼 표시
     logout_btn.classList.remove(HIDDEN_CLASSNAME);// 로그아웃 버튼 표시
-    quote.classList.add(FLEX__CLASSNAME) // 인용구를 flex로 설정하여 표시
+    quote.classList.add(FLEX__CLASSNAME) // 명언을 flex로 설정하여 표시
 }
 
 // 저장된 사용자 이름 확인
