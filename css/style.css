@@ -310,11 +310,13 @@ main {
         width: 1440px;
         height: 659px;
         background-size: 1440px, 659px;
+        object-fit: cover;
     }
 
     #backgroundImage {
         width: 1440px;
         height: 659px;
+        object-fit: cover;
     }
 }
 
