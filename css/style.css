@@ -307,20 +307,32 @@ main {
 
 @media screen and (max-width: 2559px) {
     #backgroundOverlay {
-        width: 1440px;
-        height: 659px;
-        background-size: 1440px, 659px;
+        width: 2149px;
+        height: 1368px;
+        background-size: 2149px, 1368px;
         object-fit: cover;
     }
 
     #backgroundImage {
-        width: 1440px;
-        height: 659px;
+        width: 2149px;
+        height: 1368px;
         object-fit: cover;
     }
 }
 
 @media screen and (max-width: 767px) {
+    #backgroundOverlay {
+        width: 698px;
+        height: 1138px;
+        background-size: 698px, 1138px;
+    }
+
+    #mobileImage {
+        width: 904px;
+        height: 1138px;
+        filter: brightness(80%);
+    }
+
     #login_form {
         width: 75%
     }
