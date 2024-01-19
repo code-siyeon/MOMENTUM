@@ -6,6 +6,12 @@ const loginInput = document.querySelector("#login_input");
 const loginBtn = document.querySelector("#login_form > input:nth-child(3)")
 const greeting = document.querySelector("#greeting");
 
+
+const before = document.querySelectorAll(".before, .before *") //로그인 전
+const after = document.querySelectorAll(".after")  //로그인 후
+
+
+
 // 상수 정의
 const FLEX__CLASSNAME = "flex";
 const HIDDEN_CLASSNAME = "hidden";
@@ -28,17 +34,17 @@ function onLoginSubmit(event) {
 
 // 인삿말 표시 함수
 function paintGreetings(username) {
-    loginForm.style.display = "none";//로그인 폼 숨김
-    quote.classList.add(FLEX__CLASSNAME)
-    //인삿말 표시
-    greeting.innerText = `Hello, ${username}.`; // 인삿말 글자 설정
-    greeting.classList.remove(HIDDEN_CLASSNAME); // 인삿말 표시
-    clock.classList.remove(HIDDEN_CLASSNAME); // 시계 표시
-    goal_form.classList.remove(HIDDEN_CLASSNAME); // 목표 입력 폼 표시
-    goal_list.classList.remove(HIDDEN_CLASSNAME); // 목표 리스트 표시
-    quote.classList.remove(HIDDEN_CLASSNAME);//명언 표시
-    quote.classList.add(FLEX__CLASSNAME);//명언 플렉스 설정
-    logout_btn.classList.remove(HIDDEN_CLASSNAME);// 로그아웃 버튼 표시
+    before.forEach(element => {
+        element.classList.add(HIDDEN_CLASSNAME);
+    });
+    //loginForm.style.display = "none";//로그인 폼 숨김
+    greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
+    // after 클래스를 가진 모든 요소에서 HIDDEN_CLASSNAME 클래스를 제거
+    after.forEach(element => {
+        element.classList.remove(HIDDEN_CLASSNAME);
+    });
+
+    quote.classList.add(FLEX__CLASSNAME);// quote에 플렉스 적용
 }
 
 // 저장된 사용자 이름 확인
@@ -46,9 +52,12 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     // 사용자 이름이 저장되지 않았으면 로그인 폼 표시
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    before.forEach(element => {
+        element.classList.remove(HIDDEN_CLASSNAME);
+    });
+    /*loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginInput.classList.remove(HIDDEN_CLASSNAME);
-    loginBtn.classList.remove(HIDDEN_CLASSNAME);
+    loginBtn.classList.remove(HIDDEN_CLASSNAME);*/
     loginForm.addEventListener("submit", onLoginSubmit);
 
 } else {

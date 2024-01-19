@@ -27,7 +27,7 @@ function createCheckboxElement(id) { //체크박스
     return checkbox;
 }
 
-function createLabelElement(id) {
+function createLabelElement(id) {  //체크
     const label = document.createElement("label");
     label.htmlFor = id;
     return label;
@@ -81,10 +81,10 @@ function handleGoalSubmit() {
     event.preventDefault();
     if (goals.length >= 3) {
         alert('목표는 최대 3개까지만 설정할 수 있습니다.');
+        goInput.value = "";
         return;
     };
     const newGoal = goInput.value;
-
     goInput.value = "";
     const newGoalObj = {
         text: newGoal,
@@ -108,39 +108,3 @@ if (storageGoals !== null) {
     parsedGoals.forEach(paintGoal);
 }
 
-
-
-/*
-function paintGoal(newGoal) {
-    const li = document.createElement("li")
-    li.id = newGoal.id;
-    const start = document.createElement("div");
-    start.className = "start";
-    const span = document.createElement("span")
-
-    const button = document.createElement("button")
-    button.className = "customButton";
-
-    const checkbox = document.createElement("input");
-
-    checkbox.type = "checkbox";
-    checkbox.id = "customCheckbox" + newGoal.id;
-    checkbox.className = "customCheckbox";
-
-    const checkboxLabel = document.createElement("label");
-    checkboxLabel.htmlFor = checkbox.id;
-
-
-    span.innerText = newGoal.text;
-    button.innerText = "X";
-    button.addEventListener("click", deleteGoal)
-
-
-    goalList.appendChild(li);
-    li.appendChild(start);
-    start.appendChild(checkbox)
-    start.appendChild(checkboxLabel);
-    start.appendChild(span);
-    li.appendChild(button);
-}
-*/
