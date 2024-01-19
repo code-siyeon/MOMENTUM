@@ -57,33 +57,29 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     z-index: -1;
+}
+
+#backgroundOverlay,
+#backgroundImage,
+#mobileImage {
+    width: 100%;
+    height: 100vh;
 }
 
 #backgroundOverlay {
-    display: block;
-    position: fixed;
+    position: absolute;
     opacity: 1;
-    width: 2560px;
-    height: 1440px;
     background-image: url(../img/overlay.png);
-    background-size: 2560px, 1440px;
-    filter: brightness(20%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-#backgroundImage {
-    position: relative;
-    width: 2560px;
-    height: 1440px;
-    filter: brightness(80%);
-    z-index: -1;
-}
-
+#backgroundImage,
 #mobileImage {
     position: relative;
-    width: 425px;
-    height: 659px;
+    object-fit: cover;
     filter: brightness(80%);
     z-index: -1;
 }
@@ -119,7 +115,7 @@ main {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 52vh;
+    top: 37vh;
     width: 100vh;
 }
 
@@ -161,8 +157,8 @@ main {
 }
 
 #logout_btn {
-    margin-top: 0vh;
-    margin-bottom: 5vh;
+    margin-top: 1.5vh;
+    margin-bottom: 4vh;
 
 }
 
@@ -177,6 +173,7 @@ main {
 #clock {
     position: relative;
     top: 3vh;
+    padding: 0;
     font-size: 16vh;
     font-weight: 500;
     opacity: 90%;
@@ -190,6 +187,7 @@ main {
 }
 
 #goal_form {
+    margin-top: 17vh;
     position: relative;
     font-weight: 400;
     text-align: center;
@@ -198,7 +196,7 @@ main {
 
 #goal_form span {
     display: inline-block;
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: 400;
 }
 
@@ -307,72 +305,51 @@ main {
     margin: 2vh 0;
 }
 
-@media screen and (max-width: 2559px) {
-    #backgroundOverlay {
-        width: 2488px;
-        height: 1368px;
-        background-size: 2488px, 1368px;
 
-    }
-
-    #backgroundImage {
-        width: 2488px;
-        height: 1368px;
-        object-fit: cover;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    #backgroundOverlay {
-        display: none;
-    }
-
-    #mobileImage {
-        width: 904px;
-        height: 1138px;
-        filter: brightness(80%);
-    }
+@media screen and (max-width: 768px) {
 
     #login_form {
-        width: 75%
+        top: 32vh;
+        width: 70%
     }
 
-    #login_form span {
-        font-size: 4vh;
-        line-height: normal;
+    #login_form span,
+    #goal_form span {
+        font-size: 8vw;
+        width: 100%;
+        line-height: 8vw;
         text-align: center;
     }
 
     #login_input {
         width: 100%;
         margin-top: 1vw;
-        font-size: 4.6vh;
-    }
-
-
-    #hello_clock {
-        height: 59vh;
+        font-size: 6vh;
     }
 
     #clock {
-        top: 3vh;
+        top: 3vw;
         font-size: 19vw;
     }
 
     #greeting {
-        top: 12vh;
+        top: 21vw;
         font-size: 10vw;
     }
 
+    #goal_form {
+        margin-top: 30vw;
+        width: 60vw;
+    }
+
     #goal_form span {
-        font-size: 6.5vw;
+        font-size: 6vw;
     }
 
     #goal_form .input {
-        position: relative;
-        width: 92vw;
-        font-size: 3vh;
-        border-bottom: 2px solid #fff;
+        width: 100%;
+        font-size: 8vw;
+        border-bottom: 2.5px solid #fff;
     }
 
     #goal_form .input,
@@ -380,31 +357,47 @@ main {
         margin-top: 0.5vh;
     }
 
+
+    #goal_list li {
+        margin-top: 1vh;
+    }
+
     #goal_list li span {
-        width: 35vh;
-        padding: 0.5vh;
-        margin: 0 0.5vh;
-        font-size: 4.5vw;
+        width: 50vw;
+        padding: 1vw;
+        margin: 0 0.5vw;
+        font-size: 5vw;
     }
 
     .customCheckbox[type="checkbox"]+label,
     .customCheckbox[type="checkbox"]:checked+label::after,
     #goal_list .customButton {
-        width: 4.5vw;
-        height: 4.5vw;
-        background-size: 4.5vw, 4.5vw;
+        width: 4vw;
+        height: 4vw;
+        background-size: 4vw, 4vw;
     }
 
     #goal_list .customButton {
         margin-top: 0px;
-        font-size: 5.5px;
+        font-size: 2vw;
     }
 
     #quote {
-        font-size: 3vw;
+        font-size: 15px;
     }
 
     #quote span:last-child {
-        margin: 2vw 0;
+        margin: 12px 0;
+    }
+
+    #logout_btn {
+        margin-top: 4vh;
+        margin-bottom: 5vh;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #quote {
+        font-size: 10px;
     }
 }
