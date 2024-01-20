@@ -12,7 +12,6 @@
 
 html,
 body {
-    position: relative;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -458,6 +457,8 @@ main {
     }
 
     #quote {
+        position: absolute;
+        margin-top: 72vh;
         font-size: 10px;
     }
 
