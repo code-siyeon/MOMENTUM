@@ -14,7 +14,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     font-size: 10.5px;
     line-height: 10.5px;
     letter-spacing: -0.4px;
@@ -23,6 +22,11 @@ body {
     overflow: hidden;
 }
 
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
 
 form,
 ul {
@@ -30,23 +34,35 @@ ul {
     padding: 0;
 }
 
+#wrap {
+    position: absolute;
+    min-width: 480px;
+    text-align: center;
+}
 
+main {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.hidden {
+    display: none;
+}
 
 .flex {
     display: flex;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
 
-.hidden {
-    display: none;
+
+.inline-block {
+    display: inline-block;
 }
 
 #backgroundBorder {
@@ -54,20 +70,21 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    min-height: 100vh;
     z-index: -1;
+    width: 100vw;
+    height: 100vh;
 }
 
 #backgroundOverlay,
 #backgroundImage,
 #mobileImage {
+    position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    object-fit: cover;
 }
 
 #backgroundOverlay {
-    position: absolute;
     opacity: 1;
     background-image: url(../img/overlay.png);
     background-size: cover;
@@ -77,9 +94,7 @@ main {
 
 #backgroundImage,
 #mobileImage {
-    position: relative;
-    object-fit: cover;
-    filter: brightness(80%);
+    filter: brightness(90%);
     z-index: -1;
 }
 
@@ -101,7 +116,7 @@ main {
 }
 
 #middle_area {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 85%;
     display: flex;
@@ -140,40 +155,22 @@ main {
 
 
 #login_form .input:last-child,
-#logout_btn {
-    position: relative;
+#logout_btn,
+#more_btn {
     cursor: pointer;
     font-weight: 700;
+    border-radius: 5px;
     color: #fff;
 }
 
 #login_form .input:last-child {
-    width: 15vh;
+    position: relative;
+    width: 10vw;
     margin-top: 5vh;
-    padding: 1.3vh 2.5vh;
+    padding: 1.3vh 0.5vh;
     background: rgba(0, 0, 0, .15);
     border: 2px solid #fff;
-    border-radius: 50px;
     font-size: 1.3vw;
-}
-
-#logout_btn {
-    position: relative;
-    visibility: hidden;
-    width: 5vw;
-    top: 26vw;
-    left: 20vw;
-    background: rgba(100, 88, 88, 0.35);
-    border: none;
-    border-radius: 5px;
-    font-size: 1vw;
-}
-
-#clock:hover~#logout_btn,
-#greeting:hover~#logout_btn,
-#logout_btn:hover {
-    visibility: visible;
-    transition: visibility 0s linear 0.5s, opacity 3s linear;
 }
 
 #hello_clock {
@@ -186,9 +183,9 @@ main {
 
 #clock {
     position: relative;
-    top: 4vh;
+    top: 1vh;
     padding: 0;
-    font-size: 16vh;
+    font-size: 22.5vh;
     font-weight: 500;
     opacity: 90%;
 }
@@ -196,12 +193,37 @@ main {
 #greeting {
     position: relative;
     top: 15vh;
-    font-size: 8vh;
+    margin-right: 1vw;
+    font-size: 7.5vh;
     font-weight: 500;
 }
 
+#logout_btn,
+#more_btn {
+    position: absolute;
+    opacity: 0;
+    width: 5.5vw;
+    top: 7.1vw;
+    border: none;
+    font-size: 1vw;
+}
+
+
+#more_btn {
+    opacity: 1;
+    background: none;
+}
+
+#hello_clock:hover #more_btn {
+    opacity: 0;
+}
+
+#hello_clock:hover #logout_btn {
+    opacity: 1;
+    background: rgba(100, 88, 88, 0.35);
+}
+
 #goal_form {
-    /* margin-top: 17vh; */
     position: relative;
     top: 25vw;
     font-weight: 400;
@@ -217,11 +239,11 @@ main {
 
 #goal_form .input {
     display: block;
-    margin-top: 10px;
+    margin-top: 0.5vw;
     width: 100%;
     padding: 0;
     border: none;
-    border-bottom: 3px solid #fff;
+    border-bottom: 5px solid #fff;
     background: none;
     outline: none;
     color: white;
@@ -233,7 +255,7 @@ main {
     flex-direction: column;
     position: relative;
     top: 25vw;
-    margin-top: 2vh;
+    margin-top: 1vh;
     list-style: none;
 }
 
@@ -256,7 +278,7 @@ main {
     white-space: nowrap;
     margin: 0 2vh;
     padding: 1vh;
-    width: 60vh;
+    width: 20vw;
     font-size: 3vh;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -308,8 +330,8 @@ main {
 
 
 #quote {
-    position: relative;
-    margin-top: 3vw;
+    position: absolute;
+    top: 45vw;
     width: 100vh;
     flex-direction: column;
     justify-content: flex-end;
@@ -323,52 +345,73 @@ main {
 }
 
 
-
+/* 노트북 이나 탭 */
 @media screen and (max-width: 1439px) and (min-width: 768px) {
+    #middle_area {
+        height: 77%;
+    }
+
+    #hello_clock {
+        top: 0vw;
+    }
+
     #clock {
-        top: 18vw;
-        font-size: 14.7vw;
+        top: 13vw;
+        font-size: 150px;
+        margin-bottom: 5vh;
     }
 
     #greeting {
-        top: 27vw;
-        font-size: 6vw;
+        top: 20vw;
+        font-size: 45px;
     }
 
+    #logout_btn,
+    #more_btn {
+        top: 23vw;
+    }
 
     #goal_form {
+        top: 17vw;
         margin-top: 5vw;
-        width: 44vw;
+        max-width: 87.5vw
     }
 
     #goal_form span {
-        font-size: 3vw;
-        line-height: 3vw;
+        font-size: 31.5px;
+        line-height: 1.2;
     }
 
     #goal_form .input {
-        font-size: 3vw;
+        font-size: 31px;
+        margin-top: 0;
+        border-bottom: 3px solid #fff;
     }
 
     #goal_form .input,
     #goal_list {
-        margin-top: 0.5vh;
+        top: 17vw;
     }
 
 
     #goal_list li {
-        margin-top: 1vh;
+        margin-top: 0vh;
     }
 
     #goal_list li span {
-        width: 45vw;
+        width: 31vw;
         padding: 1vw;
         margin: 0 0.5vw;
         font-size: 2vw;
     }
+
+    #quote {
+        top: 4vw;
+        margin-top: 0vw;
+    }
 }
 
-
+/* 모바일 */
 @media screen and (max-width: 767px) {
     #middle_area {
         height: 70%;
@@ -411,6 +454,10 @@ main {
         top: 21vw;
         font-size: 10vw;
     }
+
+    /* #logout_btn { 
+        top: 15vw
+    }*/
 
     #goal_form {
         margin-top: 30vw;
@@ -467,8 +514,5 @@ main {
         margin: 12px 0;
     }
 
-    #logout_btn {
-        margin-top: 4vh;
-        margin-bottom: 5vh;
-    }
+
 }

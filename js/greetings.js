@@ -14,6 +14,7 @@ const after = document.querySelectorAll(".after")  //로그인 후
 
 // 상수 정의
 const FLEX__CLASSNAME = "flex";
+const INLINE_BLOCK = "inline-block";
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
@@ -36,12 +37,13 @@ function onLoginSubmit(event) {
 function paintGreetings(username) {
     before.forEach(element => {
         element.classList.add(HIDDEN_CLASSNAME);
+        greeting.classList.remove(INLINE_BLOCK);
     });
-    //loginForm.style.display = "none";//로그인 폼 숨김
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
     // after 클래스를 가진 모든 요소에서 HIDDEN_CLASSNAME 클래스를 제거
     after.forEach(element => {
         element.classList.remove(HIDDEN_CLASSNAME);
+        greeting.classList.add(INLINE_BLOCK);
     });
 
     quote.classList.add(FLEX__CLASSNAME);// quote에 플렉스 적용
