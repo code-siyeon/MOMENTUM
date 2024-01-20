@@ -76,11 +76,11 @@ function paintGoal(newGoal) {
     goalList.appendChild(li);
 }
 
-
 function handleGoalSubmit() {
     event.preventDefault();
-    if (goals.length >= 3) {
-        alert('목표는 최대 3개까지만 설정할 수 있습니다.');
+    const maxGoals = (window.innerWidth <= 767) ? 7 : 3;
+    if (goals.length >= maxGoals) {
+        alert(`목표는 최대 ${maxGoals}개까지만 설정할 수 있습니다.`);
         goInput.value = "";
         return;
     };

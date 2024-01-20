@@ -395,6 +395,11 @@ main {
     #login_form .input:last-child {
         width: 10vw;
         font-size: 3vw;
+        padding: 1.3vh 2vw;
+    }
+
+    #hello_clock {
+        top: 46vw;
     }
 
     #clock {
