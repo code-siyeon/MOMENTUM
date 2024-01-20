@@ -371,6 +371,9 @@ main {
 
 
 @media screen and (max-width: 767px) {
+    #middle_area {
+        height: 70%;
+    }
 
     #login_form {
         top: 32vh;
@@ -458,7 +461,6 @@ main {
 
     #quote {
         position: absolute;
-        margin-top: 72vh;
         font-size: 10px;
     }
 
