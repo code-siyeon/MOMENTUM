@@ -1,7 +1,7 @@
 const goalForm = document.getElementById("goal_form");
 const goInput = document.querySelector("#goal_form input");
 const goalAfter = document.getElementById("goal_after")
-const goalList = document.getElementById("goal_list");
+
 
 
 
@@ -70,10 +70,11 @@ function paintGoal(newGoal) {
     start.appendChild(checkboxLabel);
     start.appendChild(span);
 
+
     li.appendChild(start);
     li.appendChild(button);
 
-    goalList.appendChild(li);
+    goal_list.appendChild(li);
 }
 
 function handleGoalSubmit() {

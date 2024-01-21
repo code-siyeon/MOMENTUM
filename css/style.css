@@ -195,12 +195,12 @@ main {
     width: 5.5vw;
     border: none;
     font-size: 1vw;
+    background: none;
 }
 
 
 #more_btn {
     opacity: 1;
-    background: none;
 }
 
 #hello_clock:hover #more_btn {
@@ -209,7 +209,6 @@ main {
 
 #hello_clock:hover #logout_btn {
     opacity: 1;
-    background: rgba(100, 88, 88, 0.35);
 }
 
 #goal_form {
@@ -254,6 +253,7 @@ main {
     justify-content: space-between;
     margin-top: 1.5vh;
     width: 100%;
+    height: 15%;
     background-color: rgba(0, 0, 0, 25%);
 }
 
@@ -339,7 +339,6 @@ main {
 /* 노트북 이나 탭 */
 
 @media screen and (max-width: 1439px) {
-
     #hello_clock {
         top: -13vw;
     }
@@ -383,7 +382,7 @@ main {
 
 
     #goal_list li {
-        margin-top: 0vh;
+        margin-top: 2vh;
     }
 
     #goal_list li span {
@@ -455,7 +454,8 @@ main {
 
     #logout_btn,
     #more_btn {
-        top: 22vw;
+        top: 21vw;
+        width: 7vw;
     }
 
     #greeting {
@@ -463,9 +463,8 @@ main {
     }
 
 
-    #logout_btn,
-    #more_btn {
-        width: 7vw;
+    #logout_btn {
+        width: 14vw;
     }
 
     #goal_form {

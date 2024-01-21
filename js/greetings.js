@@ -5,10 +5,13 @@ const loginSpan = document.querySelector("#login_form > span");
 const loginInput = document.querySelector("#login_input");
 const loginBtn = document.querySelector("#login_form > input:nth-child(3)")
 const greeting = document.querySelector("#greeting");
-
+const goalList = document.getElementById("goal_list");
 
 const before = document.querySelectorAll(".before, .before *") //로그인 전
 const after = document.querySelectorAll(".after")  //로그인 후
+
+
+
 
 
 
@@ -60,6 +63,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 if (savedUsername === null) {
     // 사용자 이름이 저장되지 않았으면 로그인 폼 표시
     updateVisibility(before, false);
+    goalList.classList.remove(FLEX__CLASSNAME);
     quote.classList.remove(FLEX__CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
 
