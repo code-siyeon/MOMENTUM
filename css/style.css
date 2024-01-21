@@ -254,7 +254,7 @@ main {
     justify-content: space-between;
     margin-top: 1.5vh;
     width: 100%;
-    background-color: rgba(131, 131, 131, 10%);
+    background-color: rgba(0, 0, 0, 25%);
 }
 
 #goal_list .start {
@@ -455,7 +455,7 @@ main {
 
     #logout_btn,
     #more_btn {
-        top: 24vw;
+        top: 22vw;
     }
 
     #greeting {
@@ -488,6 +488,9 @@ main {
         margin-top: 0.5vh;
     }
 
+    #goal_list {
+        top: 40vw;
+    }
 
     #goal_list li {
         margin-top: 1vh;
