@@ -11,8 +11,8 @@ function onGeo(position) {
             const wether = document.querySelector("#weather span:first-child")
             const city = document.querySelector("#weather span:last-child")
             city.innerText = data.name;
-            wether.innerText = `${data.weather[0].main}/${data.main.temp}°C`;
-        })
+            wether.innerText = `${data.weather[0].main}/${data.main.temp}°C`
+        });
 }
 function offGeo() {
     alert("Can't find you. No weather for you.");
