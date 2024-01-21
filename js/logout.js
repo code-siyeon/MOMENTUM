@@ -4,9 +4,8 @@ logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("username"); // 로컬 스토리지에서 사용자 이름 제거
 });
 
-console.log(onLogoutClick)
+
 function onLogoutClick() {
-    console.log("onLogout clicked");
     localStorage.removeItem(USERNAME_KEY); // 로컬 스토리지에서 사용자 이름 제거
     greeting.classList.add(HIDDEN_CLASSNAME); // 인삿말 숨김
     clock.classList.add(HIDDEN_CLASSNAME); // 시계숨김
