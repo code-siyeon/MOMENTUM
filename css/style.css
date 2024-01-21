@@ -254,7 +254,7 @@ main {
     justify-content: space-between;
     margin-top: 1.5vh;
     width: 100%;
-    background-color: rgb(131 131 131 / 50%);
+    background-color: rgba(131, 131, 131, 10%);
 }
 
 #goal_list .start {
@@ -273,7 +273,6 @@ main {
     font-size: 3vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: rgb(131 131 131 / 50%);
 }
 
 .customCheckbox {
@@ -454,11 +453,9 @@ main {
     }
 
 
-
-    #greeting,
     #logout_btn,
     #more_btn {
-        top: 8vw;
+        top: 24vw;
     }
 
     #greeting {
@@ -473,7 +470,7 @@ main {
     }
 
     #goal_form {
-        top: 10vw;
+        top: 40vw;
         width: 60vw;
     }
 
@@ -489,7 +486,6 @@ main {
 
     #goal_form .input,
     #goal_list {
-        top: 41vw;
         margin-top: 0.5vh;
     }
 
