@@ -418,7 +418,7 @@ main {
     }
 
     #login_form {
-        top: 32vh;
+        top: 20vh;
         width: 62vw;
     }
 
@@ -442,11 +442,11 @@ main {
     }
 
     #hello_clock {
-        top: 46vw;
+        top: 20vw;
     }
 
     #clock {
-        top: 3vw;
+        top: 10vw;
         font-size: 19vw;
     }
 
@@ -455,9 +455,11 @@ main {
         font-size: 10vw;
     }
 
-    /* #logout_btn { 
-        top: 15vw
-    }*/
+    #logout_btn,
+    #more_btn {
+        top: 15vw;
+        width: 7vw;
+    }
 
     #goal_form {
         margin-top: 30vw;
