@@ -446,8 +446,16 @@ main {
     }
 
     #clock {
-        top: 10vw;
+        top: 0vw;
         font-size: 19vw;
+    }
+
+
+
+    #greeting,
+    #logout_btn,
+    #more_btn {
+        top: 8vw;
     }
 
     #greeting {
@@ -455,9 +463,9 @@ main {
         font-size: 10vw;
     }
 
+
     #logout_btn,
     #more_btn {
-        top: 15vw;
         width: 7vw;
     }
 
@@ -472,7 +480,7 @@ main {
 
     #goal_form .input {
         width: 100%;
-        font-size: 8vw;
+        font-size: 6vw;
         border-bottom: 2.5px solid #fff;
     }
 
