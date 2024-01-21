@@ -23,8 +23,8 @@ const USERNAME_KEY = "username";
 function onLoginSubmit(event) {
     event.preventDefault(); // 폼 제출 기본 동작 방지
     const username = loginInput.value;
-    if (username.length > 5) { // 사용자 이름 길이 체크
-        alert('입력 가능한 글자수는 최대 5자입니다. \n입력 내용을 수정해주세요.');
+    if (username.length > 8) { // 사용자 이름 길이 체크
+        alert('입력 가능한 글자수는 최대 8자입니다. \n입력 내용을 수정해주세요.');
         loginInput.value = ""; // 입력 필드를 초기화
         loginInput.focus(); // 입력 필드에 포커스를 다시 맞춤
         return;
@@ -38,14 +38,15 @@ function paintGreetings(username) {
     before.forEach(element => {
         element.classList.add(HIDDEN_CLASSNAME);
         greeting.classList.remove(INLINE_BLOCK);
+        goalList.classList.remove(FLEX__CLASSNAME);
     });
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
-    // after 클래스를 가진 모든 요소에서 HIDDEN_CLASSNAME 클래스를 제거
     after.forEach(element => {
+        // after 클래스를 가진 모든 요소에서 HIDDEN_CLASSNAME 클래스를 제거
         element.classList.remove(HIDDEN_CLASSNAME);
-        greeting.classList.add(INLINE_BLOCK);
     });
-
+    greeting.classList.add(INLINE_BLOCK);
+    goalList.classList.add(FLEX__CLASSNAME);
     quote.classList.add(FLEX__CLASSNAME);// quote에 플렉스 적용
 }
 
@@ -57,9 +58,6 @@ if (savedUsername === null) {
     before.forEach(element => {
         element.classList.remove(HIDDEN_CLASSNAME);
     });
-    /*loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginInput.classList.remove(HIDDEN_CLASSNAME);
-    loginBtn.classList.remove(HIDDEN_CLASSNAME);*/
     loginForm.addEventListener("submit", onLoginSubmit);
 
 } else {

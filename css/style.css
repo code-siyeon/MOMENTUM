@@ -78,7 +78,6 @@ main {
     background-image: url(../img/overlay.png);
     background-size: cover;
     background-repeat: no-repeat;
-    filter: opacity(50%)
 }
 
 #backgroundImage,
@@ -170,17 +169,21 @@ main {
 
 #clock {
     position: relative;
-    /* top: 1vh; */
     padding: 0;
     font-size: 10vw;
     font-weight: 500;
     opacity: 90%;
 }
 
+#greeting,
+#logout_btn,
+#more_btn {
+    margin-top: 4vh;
+    top: 10vh;
+}
 
 #greeting {
     position: relative;
-    top: 15vh;
     font-size: 54px;
     font-weight: 500;
 }
@@ -190,7 +193,6 @@ main {
     position: absolute;
     opacity: 0;
     width: 5.5vw;
-    top: 15vh;
     border: none;
     font-size: 1vw;
 }
@@ -335,32 +337,28 @@ main {
 /* 노트북 이나 탭 */
 
 @media screen and (max-width: 1439px) {
-    #backgroundBorder {
-        width: 200vw;
-        height: 100vh;
-    }
 
     #hello_clock {
-        top: 0vw;
+        top: -13vw;
     }
 
     #clock {
         top: 13vw;
-        font-size: 168px;
+        font-size: 151px;
     }
 
     #greeting {
-        top: 20vw;
-        font-size: 54px;
+        font-size: 53px;
     }
 
+    #greeting,
     #logout_btn,
     #more_btn {
-        top: 23vw;
+        top: 19vw;
     }
 
     #goal_form {
-        top: 17vw;
+        top: 3vw;
         margin-top: 5vw;
         max-width: 87.5vw
     }
@@ -371,14 +369,14 @@ main {
     }
 
     #goal_form .input {
-        font-size: 31px;
+        font-size: 30px;
         margin-top: 0;
         border-bottom: 3px solid #fff;
     }
 
     #goal_form .input,
     #goal_list {
-        top: 17vw;
+        top: 3vw;
     }
 
 
@@ -402,9 +400,17 @@ main {
 @media screen and (max-width: 767px) {
 
     html,
-    body {
+    body,
+    main {
+        height: 105%;
+    }
+
+    #backgroundBorder,
+    #backgroundOverlay,
+    #backgroundImage,
+    #mobileImage {
         width: 100%;
-        height: 300%;
+        height: 110vh;
     }
 
     #middle_area {
@@ -413,7 +419,7 @@ main {
 
     #login_form {
         top: 32vh;
-        width: 70%
+        width: 62vw;
     }
 
     #login_form span,
@@ -430,7 +436,7 @@ main {
     }
 
     #login_form .input:last-child {
-        width: 10vw;
+        width: 20vw;
         font-size: 3vw;
         padding: 1.3vh 2vw;
     }
