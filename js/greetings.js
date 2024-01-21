@@ -60,7 +60,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 if (savedUsername === null) {
     // 사용자 이름이 저장되지 않았으면 로그인 폼 표시
     updateVisibility(before, false);
-    quote.classList.remove(FLEX__CLASSNAME)
+    quote.classList.remove(FLEX__CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
 
 } else {
