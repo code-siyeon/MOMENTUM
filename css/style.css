@@ -253,6 +253,8 @@ main {
     align-items: center;
     justify-content: space-between;
     margin-top: 1.5vh;
+    width: 100%;
+    background-color: rgb(131 131 131 / 50%);
 }
 
 #goal_list .start {
@@ -271,6 +273,7 @@ main {
     font-size: 3vh;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: rgb(131 131 131 / 50%);
 }
 
 .customCheckbox {
@@ -470,7 +473,7 @@ main {
     }
 
     #goal_form {
-        margin-top: 30vw;
+        top: 10vw;
         width: 60vw;
     }
 
@@ -486,6 +489,7 @@ main {
 
     #goal_form .input,
     #goal_list {
+        top: 41vw;
         margin-top: 0.5vh;
     }
 
@@ -495,7 +499,7 @@ main {
     }
 
     #goal_list li span {
-        width: 50vw;
+        width: 47vw;
         padding: 1vw;
         margin: 0 0.5vw;
         font-size: 5vw;
