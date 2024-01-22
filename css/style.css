@@ -90,17 +90,41 @@ main {
 #top_area {
     position: absolute;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100vw;
     height: 12vh;
     padding: 14.4px;
-    font-size: 2.5vh;
     opacity: 80%;
 }
 
-#top_area>span {
+#si_yeon>span {
+    display: block;
     margin-bottom: 1vh;
+    font-size: 2vh;
+}
+
+#weatherBorder {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#weatherDisplay {
+    align-items: center;
+    justify-content: center;
+}
+
+#weatherDisplay>#icon {
+    align-self: flex-start;
+}
+
+
+#city {
+    display: block;
+    margin-top: 0.1vh;
+    font-size: 1.5vh;
+    letter-spacing: 1px;
+    /* 원하는 만큼의 간격을 조절해 주세요 */
 }
 
 #middle_area {
