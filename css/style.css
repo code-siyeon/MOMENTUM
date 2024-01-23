@@ -101,7 +101,7 @@ main {
 #si_yeon>span {
     display: block;
     margin-bottom: 1vh;
-    font-size: 2vh;
+    font-size: 1.5vh;
 }
 
 #weatherBorder {
@@ -109,21 +109,22 @@ main {
     align-items: flex-end;
 }
 
-#weatherDisplay {
-    align-items: center;
-    justify-content: center;
-}
-
 #weatherDisplay>#icon {
+    width: 4vh;
+    height: 4vh;
     align-self: flex-start;
 }
 
+#weatherDisplay>#temp {
+    position: relative;
+    top: -1vh;
+    margin-top: 0;
+    font-size: 2.5vh;
+}
 
 #city {
     display: block;
-    margin-top: 0.1vh;
     font-size: 1.5vh;
-    letter-spacing: 1px;
     /* 원하는 만큼의 간격을 조절해 주세요 */
 }
 
@@ -203,7 +204,7 @@ main {
 #logout_btn,
 #more_btn {
     margin-top: 4vh;
-    top: 10vh;
+    top: 11vh;
 }
 
 #greeting {
