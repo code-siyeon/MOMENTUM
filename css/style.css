@@ -511,7 +511,9 @@ main {
         font-size: 2.5vw;
     }
 
-
+    #more_btn {
+        font-size: 1.2vw;
+    }
 
     #goal_form {
         top: 40vw;
