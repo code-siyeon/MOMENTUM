@@ -28,7 +28,7 @@ function onGeo(position) {
 
             // 4. 아이콘 이미지를 설정합니다.
             const icon = document.querySelector("#icon");
-            icon.src = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            icon.src = `https://openweathermap.org/img/wn/${iconCode}.png`;
         });
 }
 

@@ -5,11 +5,12 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 
-// DOM 요소 선택
+//  요소 선택
 const loginForm = document.querySelector("#login_form");
 const loginSpan = document.querySelector("#login_form > span");
 const loginInput = document.querySelector("#login_input");
 const loginBtn = document.querySelector("#login_form > input:nth-child(3)")
+
 const greeting = document.querySelector("#greeting");
 const goalList = document.getElementById("goal_list");
 
