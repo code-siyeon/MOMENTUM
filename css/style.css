@@ -57,6 +57,8 @@ main {
     overflow: hidden;
 }
 
+
+/* 배경 사진 */
 #backgroundBorder,
 #backgroundOverlay,
 #backgroundImage,
@@ -102,6 +104,7 @@ main {
     font-size: 1.5vh;
 }
 
+/* 날씨 */
 #weatherBorder {
     flex-direction: column;
     align-items: center;
@@ -134,6 +137,8 @@ main {
     justify-content: center;
 }
 
+
+/* 이름 입력 */
 #login_form {
     position: absolute;
     top: 50vh;
@@ -189,11 +194,13 @@ main {
     position: relative;
 }
 
+
 #hello_clock {
     top: -2vw;
     text-align: center;
 }
 
+/* 시계 */
 #clock {
     padding: 0;
     font-size: 10vw;
@@ -202,7 +209,7 @@ main {
 }
 
 
-
+/* 인삿말 */
 #greeting {
     top: 4.5vw;
     font-size: 54px;
@@ -215,6 +222,7 @@ main {
     margin-top: 4vh;
 }
 
+/* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
     position: absolute;
@@ -242,6 +250,7 @@ main {
     opacity: 1;
 }
 
+/*목표 입력*/
 #goal_form {
     position: relative;
     top: 5vw;
@@ -270,6 +279,7 @@ main {
     text-align: center;
 }
 
+/* 목표 리스트 */
 #goal_list {
     flex-direction: column;
     position: relative;
@@ -308,7 +318,7 @@ main {
     display: none;
 }
 
-
+/* 목표 리스트의 체크박스 체크 전후, 삭제버튼 */
 .customCheckbox[type="checkbox"]+label,
 .customCheckbox[type="checkbox"]:checked+label::after,
 #goal_list .customButton {
