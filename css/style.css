@@ -49,21 +49,15 @@ main {
     display: flex;
 }
 
-
-
 .inline-block {
     display: inline-block;
 }
 
 #backgroundBorder {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     overflow: hidden;
 }
 
+#backgroundBorder,
 #backgroundOverlay,
 #backgroundImage,
 #mobileImage {
@@ -71,7 +65,10 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -1;
 }
+
+
 
 #backgroundOverlay {
     opacity: 1;
@@ -83,7 +80,6 @@ main {
 #backgroundImage,
 #mobileImage {
     filter: brightness(90%);
-    z-index: -1;
 }
 
 
@@ -139,12 +135,12 @@ main {
 }
 
 #login_form {
+    position: absolute;
+    top: 50vh;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 45vh;
-    width: 100vh;
 }
 
 
@@ -187,31 +183,36 @@ main {
     font-size: 1.3vw;
 }
 
-#hello_clock {
+#hello_clock,
+#clock,
+#greeting {
     position: relative;
+}
+
+#hello_clock {
     top: -2vw;
     text-align: center;
 }
 
 #clock {
-    position: relative;
     padding: 0;
     font-size: 10vw;
     font-weight: 500;
     opacity: 90%;
 }
 
+
+
+#greeting {
+    top: 4.5vw;
+    font-size: 54px;
+    font-weight: 500;
+}
+
 #greeting,
 #logout_btn,
 #more_btn {
     margin-top: 4vh;
-}
-
-#greeting {
-    position: relative;
-    top: 4.5vw;
-    font-size: 54px;
-    font-weight: 500;
 }
 
 #logout_btn,
@@ -367,6 +368,10 @@ main {
 /* 노트북 이나 탭 */
 
 @media screen and (max-width: 1439px) {
+    #login_form {
+        top: 45vh;
+    }
+
     #hello_clock {
         top: -13vw;
     }
@@ -428,22 +433,11 @@ main {
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-
-
-    #backgroundBorder,
-    #backgroundOverlay,
-    #backgroundImage,
-    #mobileImage {
-        width: 100%;
-        height: 100vh;
-    }
-
     #middle_area {
         height: 70%;
     }
 
     #login_form {
-        top: 20vh;
         width: 62vw;
     }
 
