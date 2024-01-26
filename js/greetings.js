@@ -7,18 +7,16 @@ const USERNAME_KEY = "username";
 
 //  요소 선택
 const loginForm = document.querySelector("#login_form");
-const loginSpan = document.querySelector("#login_form > span");
 const loginInput = document.querySelector("#login_input");
-const loginBtn = document.querySelector("#login_form > input:nth-child(3)")
+
 
 const greeting = document.querySelector("#greeting");
-const goalList = document.getElementById("goal_list");
-
-
-const before = document.querySelectorAll(".before, .before *") //로그인 전 'before' 클래스 
-const after = document.querySelectorAll(".after")  //로그인 후 'after' 클래스
-const afterFlex = document.querySelectorAll('.after.flex'); //'after', 'flex' 클래스를 동시에 가진 요소들 선택
-
+//로그인 전 'logBefore' 클래스와 자식 요소들 선택
+const logBefore = document.querySelectorAll(".logBefore, .logBefore *")
+//로그인 후 'logAfter' 클래스 자식 요소들 선택
+const logAfter = document.querySelectorAll(".logAfter, logAfter *")
+//'logAfter' 클래스와 자식 중에서 'flex' 를 가진 요소들 선택
+const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex")
 
 
 // 로그인 처리 함수
@@ -39,8 +37,8 @@ function onLoginSubmit(event) {
 // 인삿말 표시 함수
 function paintGreetings(username) {
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
-    updateVisibility(before, true); // 로그인 전 요소들을 숨김
-    updateVisibility(after, false); // 로그인 후 요소들을 표시
+    updateHidden(logBefore, true); // 로그인 전 요소들을 숨김
+    updateHidden(logAfter, false); // 로그인 후 요소들을 표시
     greeting.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용
     afterFlex.forEach(element => {
         element.classList.add(FLEX__CLASSNAME); // 로그인 후 flex 적용
@@ -48,7 +46,7 @@ function paintGreetings(username) {
 }
 
 // 요소 목록의 가시성을 갱신하는 함수
-function updateVisibility(elements, hidden) {
+function updateHidden(elements, hidden) {
     elements.forEach(element => {
         element.classList[hidden ? 'add' : 'remove'](HIDDEN_CLASSNAME);
     });
@@ -59,10 +57,11 @@ function updateVisibility(elements, hidden) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
-    // 로그인 전 일때 로그인 폼 표시
-    updateVisibility(before, false); // 로그인 전 요소들을 표시
+    // 로그인 전 요소들을 표시
+    updateHidden(logBefore, false);
+    // 로그인 전 상태에서는 flex 제거
     afterFlex.forEach(element => {
-        element.classList.remove(FLEX__CLASSNAME); // (로그인 전 일때) 로그인 후의 요소 flex 제거
+        element.classList.remove(FLEX__CLASSNAME);
     });
     loginForm.addEventListener("submit", onLoginSubmit); //// 로그인 폼 제출 이벤트 핸들러 등록
 

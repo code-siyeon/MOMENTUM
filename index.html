@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width" initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./img/logo.ico" type="image/svg+xml">
     <title>Momentum</title>
 </head>
 
@@ -17,40 +18,40 @@
             <img id="mobileImage"></img>
         </div>
         <div id="top_area">
-            <div id="si_yeon" class="hidden after">
-                <span>Cloned Momentum</span>
+            <div id="si_yeon" class="logAfter hidden ">
+                <span>Cloned</span>
                 <span>By. Si Yeon</span>
             </div>
-            <div id="weatherBorder" class="flex hidden after">
-                <div id="weatherDisplay" class="hidden after">
+            <div id="weatherBorder" class="logAfter flex hidden">
+                <div id="weatherDisplay">
                     <img id="icon"></img>
                     <span id="temp"></span>
                 </div>
-                <span id="city"></span>
+                <span id="city" class="hidden"></span>
             </div>
         </div>
         <div id="middle_area">
-            <form id="login_form" class="before hidden">
-                <span class="before hidden">Hello, what's your name?</span>
-                <input id="login_input" class="input before hidden" required maxlength="8" type="text" placeholder="" />
-                <input class="input before hidden" type="submit" value="Continue  >"></input>
+            <form id="login_form" class="logBefore hidden">
+                <span>Hello, what's your name?</span>
+                <input id="login_input" class="input" required maxlength="8" type="text" placeholder="" />
+                <input class="input" type="submit" value="Continue  >"></input>
             </form>
             <div id="hello_clock">
-                <h2 id="clock" class="after hidden">00:00:00</h2>
-                <div id="hello_logout">
-                    <h1 id="greeting" class="after hidden"></h1>
-                    <button id="more_btn" class="after hidden">● ● ●</button>
-                    <button id="logout_btn" class="after hidden">Log out</button>
+                <h2 id="clock" class="logAfter hidden">00:00:00</h2>
+                <div id="hello_logout" class="logAfter hidden">
+                    <h1 id="greeting"></h1>
+                    <button id="more_btn">● ● ●</button>
+                    <button id="logout_btn">Log out</button>
                 </div>
             </div>
 
-            <form id="goal_form" class="after hidden">
-                <span class="after hidden">What is your main goal for today?</span>
-                <input class="input after hidden" type="text" />
+            <form id="goal_form" class="logAfter hidden">
+                <span>What is your main goal for today?</span>
+                <input class="input" type="text" />
             </form>
-            <ul id="goal_list" class="after hidden flex"></ul>
+            <ul id="goal_list" class="logAfter hidden flex"></ul>
         </div>
-        <div id="quote" class="after flex hidden">
+        <div id="quote" class="logAfter hidden flex ">
             <span></span>
             <span></span>
         </div>

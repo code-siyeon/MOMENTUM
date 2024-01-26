@@ -15,6 +15,7 @@ function onGeo(position) {
     fetch(url)
         .then((response) => response.json()) // 응답을 JSON 형태로
         .then((data) => {
+            console.log(data);
             // 1. 날씨 데이터를 가져옵니다.
             const temp = document.querySelector("#temp");
             temp.innerText = `${Math.round(data.main.temp)}°`;
