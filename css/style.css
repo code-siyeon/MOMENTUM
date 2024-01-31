@@ -60,7 +60,6 @@ main {
 
 /* 배경 사진 */
 #backgroundBorder,
-#backgroundOverlay,
 #backgroundImage,
 #mobileImage {
     position: absolute;
@@ -70,19 +69,10 @@ main {
 }
 
 
-
-#backgroundOverlay {
-    opacity: 1;
-    background-image: url(../img/overlay.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-}
-
 #backgroundImage,
 #mobileImage {
-    filter: brightness(90%);
-    z-index: -2;
+    filter: brightness(80%);
+    z-index: -1;
 }
 
 
@@ -142,7 +132,7 @@ main {
 /* 이름 입력 */
 #login_form {
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     width: 100vh;
     display: flex;
     flex-direction: column;
@@ -151,18 +141,18 @@ main {
 
 
 #login_form span {
-    font-size: 6.6vh;
+    font-size: 8vh;
 }
 
 #login_input {
     position: relative;
-    width: 75%;
+    width: 88%;
     margin-top: 2vw;
     padding: 0;
     border: none;
-    border-bottom: 3px solid #fff;
+    border-bottom: 5px solid #fff;
     color: white;
-    font-size: 5vh;
+    font-size: 8vh;
     text-align: center;
     background: none;
     outline: none;
@@ -185,7 +175,7 @@ main {
     margin-top: 5vh;
     padding: 1.3vh 0.5vh;
     background: rgba(0, 0, 0, .15);
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     font-size: 1.3vw;
 }
 
@@ -220,14 +210,14 @@ main {
 #greeting,
 #logout_btn,
 #more_btn {
-    margin-top: 4vh;
+    margin-top: 60px;
 }
 
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
     position: absolute;
-    top: 4.7vw;
+    top: 4.3vw;
     width: 5.5vw;
     font-size: 1.2vw;
     border: none;
@@ -286,7 +276,9 @@ main {
     position: relative;
     top: 5vw;
     margin-top: 1vh;
+    width: 100%;
     list-style: none;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, .50);
 }
 
 #goal_list li {
@@ -294,7 +286,6 @@ main {
     align-items: center;
     justify-content: space-between;
     margin-top: 1.5vh;
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, .80);
 }
 
 #goal_list .start {
@@ -379,9 +370,6 @@ main {
 /* 노트북 이나 탭 */
 
 @media screen and (max-width: 1439px) {
-    #login_form {
-        top: 45vh;
-    }
 
     #hello_clock {
         top: -13vw;
@@ -392,11 +380,12 @@ main {
         font-size: 151px;
     }
 
+
     #greeting {
+        top: 19vw;
         font-size: 53px;
     }
 
-    #greeting,
     #logout_btn,
     #more_btn {
         top: 19vw;
@@ -419,7 +408,6 @@ main {
         border-bottom: 3px solid #fff;
     }
 
-    #goal_form .input,
     #goal_list {
         top: 3vw;
     }
@@ -461,6 +449,14 @@ main {
     }
 
     #login_input {
+        border-bottom: 2px solid #fff;
+    }
+
+    #login_form .input:last-child {
+        border: 2px solid #fff;
+    }
+
+    #login_input {
         width: 100%;
         font-size: 8vw;
     }
@@ -497,7 +493,13 @@ main {
 
     #clock {
         top: 12vw;
-        font-size: 25vw;
+        font-size: 29vw;
+    }
+
+    #greeting,
+    #logout_btn,
+    #more_btn {
+        margin-top: 50px;
     }
 
     #greeting {
@@ -512,13 +514,10 @@ main {
         font-size: 2.5vw;
     }
 
-    #more_btn {
-        font-size: 1.2vw;
-    }
-
     #goal_form {
         top: 40vw;
         width: 60vw;
+        margin-top: 30px;
     }
 
     #goal_form span {
@@ -526,7 +525,6 @@ main {
     }
 
     #goal_form .input {
-        width: 100%;
         font-size: 6vw;
         border-bottom: 2.5px solid #fff;
     }
@@ -537,6 +535,7 @@ main {
     }
 
     #goal_list {
+        width: 85%;
         top: 40vw;
     }
 
@@ -566,7 +565,7 @@ main {
 
     #quote {
         position: absolute;
-        top: 160vw;
+        top: 93vh;
         font-size: 10px;
     }
 

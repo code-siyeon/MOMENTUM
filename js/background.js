@@ -1,3 +1,4 @@
+// 배경 이미지 파일 이름 배열
 const images = [
     "0.jpg",
     "1.jpg",
@@ -27,10 +28,12 @@ const mImages = [
     "m11.jpg",
 ]
 
+// 배경 이미지를 표시할 요소 선택
 const mobileImg = document.querySelector("#mobileImage")
 const bgImages = document.querySelector("#backgroundImage")
 
 
+// 화면의 너비에 따라 적절한 배경 이미지 선택 및 표시
 if (window.innerWidth <= 767) {
     // 모바일 화면
     const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
@@ -42,10 +45,5 @@ if (window.innerWidth <= 767) {
     bgImages.src = `img/${randomImages}`;
     mobileImg.style.display = "none";
 }
-
-
-
-
-
 
 

@@ -1,3 +1,5 @@
+// 명언을 담고 있는 객체들의 배열
+// 각각 명언(quote)과 저자(author)를 가지고 있음
 const quotes = [
     {
         quote: "The course of true love never did run smooth.",
@@ -61,17 +63,16 @@ const quotes = [
     }
 ];
 
-
-
+// 명언을 표시할 HTML 요소를 선택
 const wiseSaying = document.querySelector("#quote span:first-child");
+// 저자 이름을 표시할 HTML 요소를 선택
 const author = document.querySelector("#quote span:last-child");
 
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-wiseSaying.innerText = `"${randomQuote.quote}"`;
-author.innerText = randomQuote.author;
 
-/*function displayQuote() {
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    quote.innerText = `"${randomQuote.quote}"`;
-    author.innerText = randomQuote.author;
-}*/
+// quotes 배열에서 랜덤으로 한 객체를 선택
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+// 선택된 명언을 화면에 표시
+wiseSaying.innerText = `"${randomQuote.quote}"`;
+// 선택된 저자 이름을 화면에 표시
+author.innerText = randomQuote.author;
