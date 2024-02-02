@@ -443,13 +443,14 @@ ul {
     }
 
     #login_form {
+        top: 25vh;
         width: 62vw;
     }
 
     #login_form span {
         font-size: 12vw;
         text-align: left;
-        line-height: normal;
+        line-height: 50px;
     }
 
     #goal_form span {
@@ -499,7 +500,8 @@ ul {
     }
 
     #hello_clock {
-        top: 20vw;
+        position: absolute;
+        top: 15vw;
     }
 
     #clock {
@@ -576,7 +578,7 @@ ul {
 
     #quote {
         position: absolute;
-        top: 93vh;
+        top: 87vh;
         font-size: 10px;
     }
 
