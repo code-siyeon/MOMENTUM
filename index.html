@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <main>
+    <div id="wrap">
         <div id="backgroundBorder">
             <img id="backgroundImage"></img>
             <img id="mobileImage"></img>
         </div>
-        <div id="top_area">
+        <header id="top_area">
             <div id="si_yeon" class="logAfter hidden">
                 <span>Cloned</span>
                 <span>By. Si Yeon</span>
@@ -28,8 +28,8 @@
                 </div>
                 <span id="city" class="hidden"></span>
             </div>
-        </div>
-        <div id="middle_area">
+        </header>
+        <main id="middle_area">
             <form id="login_form" class="logBefore hidden">
                 <span>Hello, what's your name?</span>
                 <input id="login_input" class="input" required maxlength="8" type="text" placeholder="" />
@@ -48,11 +48,11 @@
                 <input class="input" type="text" />
             </form>
             <ul id="goal_list" class="logAfter hidden flex"></ul>
-        </div>
-        <div id="quote" class="logAfter hidden flex ">
+        </main>
+        <footer id="quote" class="logAfter hidden flex ">
             <span></span>
             <span></span>
-        </div>
+        </footer>
         <script src="js/background.js"></script>
         <script src="js/greetings.js"></script>
         <script src="js/logout.js"></script>
@@ -60,7 +60,7 @@
         <script src="js/goal.js"></script>
         <script src="js/quotes.js"></script>
         <script src="js/weather.js"></script>
-    </main>
+    </div>
 </body>
 
 </html>
