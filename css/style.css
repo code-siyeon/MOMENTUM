@@ -274,6 +274,7 @@ ul {
 /* 목표 리스트 */
 #goal_list {
     flex-direction: column;
+    align-items: center;
     position: relative;
     top: 5vw;
     margin-top: 1vh;
@@ -501,7 +502,7 @@ ul {
 
     #hello_clock {
         position: absolute;
-        top: 13vw;
+        top: 50vw;
     }
 
     #clock {
@@ -528,7 +529,8 @@ ul {
     }
 
     #goal_form {
-        top: 40vw;
+        position: absolute;
+        top: 90vw;
         width: 60vw;
         margin-top: 30px;
     }
@@ -548,8 +550,9 @@ ul {
     }
 
     #goal_list {
+        position: absolute;
         width: 95%;
-        top: 40vw;
+        top: 122vw;
     }
 
     #goal_list li {
