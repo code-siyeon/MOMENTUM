@@ -121,7 +121,7 @@ main {
 
 #middle_area {
     position: relative;
-    top: 1vw;
+    top: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,8 +158,6 @@ main {
     outline: none;
 }
 
-
-
 #login_form .input:last-child,
 #logout_btn,
 #more_btn {
@@ -187,14 +185,15 @@ main {
 
 
 #hello_clock {
-    top: -2vw;
+    top: -3vw;
     text-align: center;
 }
 
 /* 시계 */
 #clock {
     padding: 0;
-    font-size: 10vw;
+    /*font-size: 10vw;*/
+    font-size: 25vh;
     font-weight: 500;
     opacity: 90%;
 }
@@ -203,14 +202,16 @@ main {
 /* 인삿말 */
 #greeting {
     top: 4.5vw;
-    font-size: 54px;
+    font-size: 10vh;
+    /*font-size: 54px;*/
     font-weight: 500;
 }
 
 #greeting,
 #logout_btn,
 #more_btn {
-    margin-top: 60px;
+    /*margin-top: 60px;*/
+    margin-top: 10vh;
 }
 
 /* ● ● ● 버튼, 로그아웃버튼 */
@@ -245,15 +246,15 @@ main {
 #goal_form {
     position: relative;
     top: 5vw;
-    font-weight: 400;
     text-align: center;
 }
 
 
 #goal_form span {
     display: inline-block;
-    font-size: 2vw;
-    font-weight: 400;
+    /*font-size: 2vw;*/
+    font-size: 4vh;
+    font-weight: 500;
 }
 
 #goal_form .input {
@@ -380,10 +381,15 @@ main {
         font-size: 151px;
     }
 
+    #greeting,
+    #logout_btn,
+    #more_btn {
+        margin-top: 5vh;
+    }
 
     #greeting {
         top: 19vw;
-        font-size: 53px;
+        font-size: 63px;
     }
 
     #logout_btn,
@@ -433,7 +439,7 @@ main {
 /* 모바일 */
 @media screen and (max-width: 767px) {
     #middle_area {
-        height: 70%;
+        height: 80%;
     }
 
     #login_form {
@@ -493,7 +499,7 @@ main {
 
     #clock {
         top: 12vw;
-        font-size: 29vw;
+        font-size: 25vw;
     }
 
     #greeting,
@@ -535,7 +541,7 @@ main {
     }
 
     #goal_list {
-        width: 85%;
+        width: 95%;
         top: 40vw;
     }
 
@@ -571,5 +577,12 @@ main {
 
     #quote span:last-child {
         margin: 12px 0;
+    }
+}
+
+@media screen and (max-height: 658px) {
+
+    body {
+        overflow: scroll;
     }
 }
