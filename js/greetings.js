@@ -4,7 +4,6 @@ const INLINE_BLOCK = "inline-block";
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
-
 //  요소 선택
 const loginForm = document.querySelector("#login_form");
 const loginInput = document.querySelector("#login_input");
@@ -13,7 +12,6 @@ const greeting = document.querySelector("#greeting");
 // 로그인 전/후 요소 선택
 const logBefore = document.querySelectorAll(".logBefore, .logBefore *");
 const logAfter = document.querySelectorAll(".logAfter, logAfter *");
-
 
 // 로그인 후 flex를 가진 요소 선택
 const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex");
@@ -38,12 +36,12 @@ function onLoginSubmit(event) {
         loginInput.focus(); // 입력 필드에 포커스를 다시 맞춤
     } else {
         localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 사용자 이름 저장
-        paintGreetings(username); // 인삿말 표시
+        LoginAfter(username); // 인삿말 표시
     }
 }
 
-// 로그인 전 상태 처리 함수
-function handleBeforeLogin() {
+// 로그인 전 함수
+function LoginBefore() {
     // 로그인 전 요소들을 표시
     updateHidden(logBefore, false);
     // 로그인 후 요소들을 숨김
@@ -60,8 +58,8 @@ function handleBeforeLogin() {
     loginForm.addEventListener("submit", onLoginSubmit);
 }
 
-// 인삿말 표시 함수
-function paintGreetings(username) {
+// 로그인 후 함수
+function LoginAfter(username) {
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
     updateHidden(logBefore, true); // 로그인 전 요소들을 숨김
     updateHidden(logAfter, false); // 로그인 후 요소들을 표시
@@ -77,10 +75,8 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     // 로그인 전 상태 처리
-    handleBeforeLogin();
-
+    LoginBefore();
 } else {
-    // 저장된 사용자 이름이 있으면 인삿말 표시
-    paintGreetings(savedUsername);
+    // 로그인 후 상태 처리
+    LoginAfter(savedUsername);
 }
-

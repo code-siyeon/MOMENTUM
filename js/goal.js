@@ -119,4 +119,3 @@ if (storageGoals !== null) {
     goals = parsedGoals
     parsedGoals.forEach(paintGoal);
 }
-
