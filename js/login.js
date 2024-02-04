@@ -36,12 +36,12 @@ function onLoginSubmit(event) {
         loginInput.focus(); // 입력 필드에 포커스를 다시 맞춤
     } else {
         localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 사용자 이름 저장
-        LoginAfter(username); // 인삿말 표시
+        loginAfter(username); // 인삿말 표시
     }
 }
 
 // 로그인 전 함수
-function LoginBefore() {
+function loginBefore() {
     // 로그인 전 요소들을 표시
     updateHidden(logBefore, false);
     // 로그인 후 요소들을 숨김
@@ -59,7 +59,7 @@ function LoginBefore() {
 }
 
 // 로그인 후 함수
-function LoginAfter(username) {
+function loginAfter(username) {
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
     updateHidden(logBefore, true); // 로그인 전 요소들을 숨김
     updateHidden(logAfter, false); // 로그인 후 요소들을 표시
@@ -75,8 +75,8 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     // 로그인 전 상태 처리
-    LoginBefore();
+    loginBefore();
 } else {
     // 로그인 후 상태 처리
-    LoginAfter(savedUsername);
+    loginAfter(savedUsername);
 }
