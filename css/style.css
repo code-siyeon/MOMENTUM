@@ -581,11 +581,11 @@ ul {
 
     #quote {
         position: absolute;
-        top: 87vh;
+        top: 83vh;
         font-size: 10px;
     }
 
     #quote span:last-child {
-        margin: 12px 0;
+        margin: 10px 0;
     }
 }

@@ -5,7 +5,6 @@ const logoutBtn = document.querySelector("#logout_btn");
 function onLogoutClick() {
     // 로컬 스토리지에서 사용자 이름을 제거
     localStorage.removeItem(USERNAME_KEY);
-
     handleBeforeLogin()
 }
 
