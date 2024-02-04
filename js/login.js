@@ -20,7 +20,11 @@ const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex");
 // 요소 목록의 가시성을 갱신하는 함수
 function updateHidden(elements, hidden) {
     elements.forEach(element => {
-        element.classList[hidden ? 'add' : 'remove'](HIDDEN_CLASSNAME);
+        if (hidden) { 
+            element.classList.add(HIDDEN_CLASSNAME);
+        } else {
+            element.classList.remove(HIDDEN_CLASSNAME);
+        }
     });
 }
 
@@ -36,12 +40,12 @@ function onLoginSubmit(event) {
         loginInput.focus(); // 입력 필드에 포커스를 다시 맞춤
     } else {
         localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 사용자 이름 저장
-        loginAfter(username); // 인삿말 표시
+        showGreeting(username); // 인삿말 표시
     }
 }
 
 // 로그인 전 함수
-function loginBefore() {
+function showLoginForm() {
     // 로그인 전 요소들을 표시
     updateHidden(logBefore, false);
     // 로그인 후 요소들을 숨김
@@ -59,7 +63,7 @@ function loginBefore() {
 }
 
 // 로그인 후 함수
-function loginAfter(username) {
+function showGreeting(username) {
     greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
     updateHidden(logBefore, true); // 로그인 전 요소들을 숨김
     updateHidden(logAfter, false); // 로그인 후 요소들을 표시
@@ -75,8 +79,8 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     // 로그인 전 상태 처리
-    loginBefore();
+    showLoginForm();
 } else {
     // 로그인 후 상태 처리
-    loginAfter(savedUsername);
+    showGreeting(savedUsername);
 }
