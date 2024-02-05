@@ -29,30 +29,31 @@
                 <span id="city" class="hidden"></span>
             </div>
         </header>
-        <main id="middle_area">
-            <form id="login_form" class="logBefore hidden">
-                <span>Hello, what's your name?</span>
-                <input id="login_input" class="input" required maxlength="8" type="text" placeholder="" />
-                <input class="input" type="submit" value="Continue  >"></input>
-            </form>
-            <div id="hello_clock">
-                <h2 id="clock" class="logAfter hidden">00:00:00</h2>
-                <div id="hello_logout" class="logAfter hidden">
-                    <h1 id="greeting"></h1>
-                    <button id="more_btn">● ● ●</button>
-                    <button id="logout_btn">Log out</button>
-                </div>
-            </div>
-            <form id="goal_form" class="logAfter hidden">
-                <span>What is your main goal for today?</span>
-                <input class="input" type="text" />
-            </form>
-            <ul id="goal_list" class="logAfter hidden flex"></ul>
+        <form id="login_form" class="logBefore hidden">
+            <span>Hello, what's your name?</span>
+            <input id="login_input" class="input" required maxlength="8" type="text" placeholder="" />
+            <input class="input" type="submit" value="Continue  >"></input>
+        </form>
+        <main id="middle_area" class="logAfter hidden">
+            <section id="hello_clock" class="logAfter hidden">
+                <h2 id="clock">00:00:00</h2>
+                <h1 id="greeting" class="inline-block"></h1>
+                <button id="more_btn">● ● ●</button>
+                <button id="logout_btn">Log out</button>
+            </section>
+            <section id="goal_container" class="logAfter hidden">
+                <form id="goal_form" class="logAfter hidden flex">
+                    <span>What is your main goal for today?</span>
+                    <input class="input" type="text" />
+                </form>
+                <ul id="goal_list" class="logAfter hidden flex"></ul>
+            </section>
         </main>
         <footer id="quote" class="logAfter hidden flex ">
             <span></span>
             <span></span>
         </footer>
+
         <script src="js/background.js"></script>
         <script src="js/login.js"></script>
         <script src="js/logout.js"></script>

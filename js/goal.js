@@ -91,18 +91,20 @@ function deleteGoal(event) {
 // 목표 리스트 폼 제출 이벤트를 처리하는 함수
 function handleGoalSubmit() {
     event.preventDefault();
-    let maxGoals = (window.innerWidth <= 767) ? 7 : 3;
-    if (goals.length >= maxGoals) {
-        alert(`목표는 최대 ${maxGoals}개까지만 설정할 수 있습니다.`);
+    if (goals.length >= 3) {
+        alert(`목표는 최대 3개까지만 설정할 수 있습니다.`);
         goInput.value = "";
         return;
     };
+
     const newGoal = goInput.value;
     goInput.value = "";
+
     const newGoalObj = {
         text: newGoal,
         id: Date.now(),
     };
+
     goals.push(newGoalObj);
     paintGoal(newGoalObj);
     saveGoals();

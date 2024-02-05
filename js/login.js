@@ -20,7 +20,7 @@ const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex");
 // 요소 목록의 가시성을 갱신하는 함수
 function updateHidden(elements, hidden) {
     elements.forEach(element => {
-        if (hidden) { 
+        if (hidden) {
             element.classList.add(HIDDEN_CLASSNAME);
         } else {
             element.classList.remove(HIDDEN_CLASSNAME);
@@ -64,7 +64,7 @@ function showLoginForm() {
 
 // 로그인 후 함수
 function showGreeting(username) {
-    greeting.innerText = `Hello, ${username}.`; // 인삿말 설정
+    greeting.innerText = `See the good, ${username}.`; // 인삿말 설정
     updateHidden(logBefore, true); // 로그인 전 요소들을 숨김
     updateHidden(logAfter, false); // 로그인 후 요소들을 표시
     greeting.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용

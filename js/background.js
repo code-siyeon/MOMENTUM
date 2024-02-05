@@ -33,17 +33,24 @@ const mobileImg = document.querySelector("#mobileImage")
 const bgImages = document.querySelector("#backgroundImage")
 
 
-// 화면의 너비에 따라 적절한 배경 이미지 선택 및 표시
-if (window.innerWidth <= 767) {
-    // 모바일 화면
-    const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
-    mobileImg.src = `img/${mRandomImg}`;
-    bgImages.style.display = "none";
-} else {
-    // 데스크톱 화면
-    const randomImages = images[Math.floor(Math.random() * images.length)];
-    bgImages.src = `img/${randomImages}`;
-    mobileImg.style.display = "none";
+function updateBackgroundImage() {
+
+    // 화면의 너비에 따라 적절한 배경 이미지 선택 및 표시
+    if (window.innerWidth <= 767) {
+        // 모바일 화면
+        const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
+        mobileImg.src = `img/${mRandomImg}`;
+        bgImages.style.display = "none";
+    } else {
+        // 데스크톱 화면
+        const randomImages = images[Math.floor(Math.random() * images.length)];
+        bgImages.src = `img/${randomImages}`;
+        mobileImg.style.display = "none";
+    }
 }
 
+// 페이지 로드 시점에 이미지 업데이트
+updateBackgroundImage();
 
+// 브라우저 창 크기 변경 시점에 이미지 업데이트
+window.addEventListener('resize', updateBackgroundImage);
