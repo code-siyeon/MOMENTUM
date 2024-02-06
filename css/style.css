@@ -180,10 +180,9 @@ ul {
     display: grid;
     grid-row: 4/7;
     position: relative;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 0.5fr);
     justify-items: center;
-
 }
 
 #clock,
@@ -195,7 +194,7 @@ ul {
 #clock {
     grid-row: 2;
     padding: 0;
-    font-size: 16.5rem;
+    font-size: 23vh;
     font-weight: 500;
     opacity: 90%;
 }
@@ -205,7 +204,7 @@ ul {
 /* 인삿말 */
 #greeting {
     grid-row: 6;
-    font-size: 4.3rem;
+    font-size: 6vh;
     font-weight: 500;
 }
 
@@ -213,11 +212,12 @@ ul {
 #logout_btn,
 #more_btn {
     grid-row: 6;
-    position: absolute;
-    top: -7px;
-    right: -3rem;
-    width: 5.5vw;
-    font-size: 1.2rem;
+    grid-column: 5;
+    display: flex;
+    justify-content: flex-end;
+    width: 8vw;
+    margin-left: 6em;
+    font-size: 1.2vh;
     border: none;
     background: none;
 }
@@ -264,7 +264,7 @@ ul {
 
 #goal_form span,
 #goal_form .input {
-    font-size: 35px;
+    font-size: 5vh;
 }
 
 #goal_form span {
@@ -274,7 +274,7 @@ ul {
 
 #goal_form .input {
     display: block;
-    margin-top: 0.5vw;
+    margin-top: 2vh;
     width: 100%;
     padding: 0;
     outline: none;
@@ -444,8 +444,9 @@ ul {
     }
 
     #hello_clock {
-        grid-row: 3/7;
-        grid-template-rows: repeat(5, 1fr);
+        grid-row: 4/8;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     #clock {
@@ -453,18 +454,17 @@ ul {
     }
 
     #greeting {
-        width: 23rem;
-        grid-row: 4;
-        font-size: 10vw;
+        width: 21rem;
+        grid-row: 5;
+        font-size: 3.4rem;
         text-align: center;
         line-height: normal;
     }
 
     #logout_btn,
     #more_btn {
-        top: 2em;
-        right: -1rem;
-        grid-row: 5;
+        grid-row: 6;
+        grid-column: 4;
         width: 15vw;
         font-size: 2.5vw;
     }
@@ -479,12 +479,12 @@ ul {
         width: 60vw;
     }
 
-    #goal_form span {
-        font-size: 6vw;
+    #goal_form span,
+    #goal_form .input {
+        font-size: 4.1vw;
     }
 
     #goal_form .input {
-        font-size: 6vw;
         border-bottom: 2.5px solid #fff;
     }
 
