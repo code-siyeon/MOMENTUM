@@ -231,11 +231,11 @@ ul {
     opacity: 0;
 }
 
-#hello_clock:hover #more_btn {
+#greeting:hover #more_btn {
     opacity: 0;
 }
 
-#hello_clock:hover #logout_btn {
+#greeting:hover #logout_btn {
     opacity: 1;
 }
 
