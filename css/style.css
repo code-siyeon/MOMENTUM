@@ -244,8 +244,7 @@ ul {
     display: grid;
     grid-template-rows: repeat(6, 0.5fr);
     position: relative;
-    align-items: stretch;
-    width: auto;
+    justify-items: center;
 }
 
 #goal_form,
@@ -495,7 +494,7 @@ ul {
 
     #goal_list {
         grid-row: 2;
-        width: 95%;
+        width: 60vw;
     }
 
     #goal_list li {
