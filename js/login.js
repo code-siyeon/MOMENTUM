@@ -16,8 +16,8 @@ const logBefore = document.querySelectorAll(".logBefore, .logBefore *");
 const logAfter = document.querySelectorAll(".logAfter, logAfter *");
 
 // 로그인 후 flex/grid를 가진 요소 선택
-const afterFlex = document.getElementsByClassName("logAfter flex");
-const afterGrid = document.getElementsByClassName("logAfter grid");
+const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex");
+const afterGrid = document.querySelectorAll(".logAfter.grid, .logAfter .grid");
 
 
 // 요소의 가시성을 변경하는 함수
@@ -78,8 +78,8 @@ function showLoginForm() {
     // 로그인 후 요소들을 숨김
     changeHidden(logAfter, true);
     // 로그인 후 요소들의 flex/grid 제거
-    changeFlex(logAfter, false);
-    changeGrid(logAfter, false);
+    changeFlex(afterFlex, false);
+    changeGrid(afterGrid, false);
 
     // 입력 필드를 초기화
     loginInput.value = "";
@@ -94,8 +94,8 @@ function showGreeting(username) {
     changeHidden(logAfter, false); // 로그인 후 요소들을 표시
     greeting.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용
     // 로그인 후 요소들의 flex/grid 적용
-    changeFlex(logAfter, true);
-    changeGrid(logAfter, true);
+    changeFlex(afterFlex, true);
+    changeGrid(afterGrid, true);
 }
 
 
