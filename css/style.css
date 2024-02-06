@@ -472,7 +472,7 @@ ul {
 
     #goal_container {
         grid-template-rows: repeat(4, 0.4fr);
-        grid-row: 7;
+        grid-row: 6;
     }
 
     #goal_form {
