@@ -36,7 +36,7 @@ let WideScreen = window.innerWidth > 767;
 
 function updateBackgroundImage() {
     // 화면의 너비에 따라 적절한 배경 이미지 선택 및 표시
-    if (WideScreen && window.innerWidth <= 767) {
+    if (window.innerWidth <= 767) {
         // 모바일 화면
         const mRandomImg = mImages[Math.floor(Math.random() * mImages.length)];
         mobileImg.src = `img/${mRandomImg}`;

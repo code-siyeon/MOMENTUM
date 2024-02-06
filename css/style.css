@@ -41,12 +41,16 @@ ul {
 }
 
 
-.hidden {
-    display: none;
-}
-
 .flex {
     display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
 }
 
 .inline-block {
@@ -168,7 +172,6 @@ ul {
 
 
 #middle_area {
-    display: grid;
     position: relative;
     height: 90%;
     justify-content: center;
@@ -177,7 +180,6 @@ ul {
 }
 
 #hello_clock {
-    display: grid;
     grid-row: 4/7;
     position: relative;
     grid-template-rows: repeat(6, 1fr);
@@ -203,7 +205,7 @@ ul {
 
 /* 인삿말 */
 #greeting {
-    grid-row: 6;
+    grid-row: 7;
     font-size: 6vh;
     font-weight: 500;
 }
@@ -211,7 +213,7 @@ ul {
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
-    grid-row: 6;
+    grid-row: 7;
     grid-column: 5;
     display: flex;
     justify-content: flex-end;
@@ -240,8 +242,7 @@ ul {
 }
 
 #goal_container {
-    grid-row: 7;
-    display: grid;
+    grid-row: 7/8;
     grid-template-rows: repeat(6, 0.5fr);
     position: relative;
     justify-items: center;
@@ -382,9 +383,8 @@ ul {
 }
 
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
-/* 모바일 */
-@media screen and (max-width: 767px) {
     #login_form {
         top: 30vh;
         width: 62vw;
@@ -393,7 +393,7 @@ ul {
     #login_form span {
         font-size: 12vw;
         text-align: left;
-        line-height: 50px;
+        line-height: normal;
     }
 
     #goal_form span {
@@ -442,37 +442,195 @@ ul {
         letter-spacing: -1px;
     }
 
+    #middle_area {
+        grid-template-rows: repeat(6, 1fr);
+    }
+
     #hello_clock {
-        grid-row: 3/6;
+        grid-row: 3/5;
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(4, 1fr);
     }
 
     #clock {
-        grid-row: 1;
-        font-size: 25vw;
+        grid-row: 2;
+        font-size: 10rem;
     }
 
     #greeting {
-        width: 21rem;
+        width: 25rem;
         grid-row: 4;
-        font-size: 3.4rem;
+        font-size: 4rem;
         text-align: center;
         line-height: normal;
     }
 
     #logout_btn,
     #more_btn {
-        grid-row: 5;
+        grid-row: 6;
         grid-column: 3;
         width: 15vw;
         font-size: 2.5vw;
-        align-items: flex-end;
+        align-items: center;
     }
 
     #goal_container {
         grid-template-rows: repeat(4, 0.4fr);
+        grid-row: 5/7;
+    }
+
+    #goal_form {
+        grid-row: 1;
+        width: 60vw;
+    }
+
+    #goal_form span,
+    #goal_form .input {
+        font-size: 4.1vw;
+    }
+
+    #goal_form .input {
+        border-bottom: 2.5px solid #fff;
+    }
+
+    #goal_form .input,
+    #goal_list {
+        margin-top: 0.5vh;
+    }
+
+    #goal_list {
+        grid-row: 2;
+        width: 60vw;
+    }
+
+    #goal_list li {
+        margin-top: 1vh;
+    }
+
+    #goal_list li span {
+        width: 47vw;
+        padding: 1vw;
+        margin: 0 0.5vw;
+        font-size: 5vw;
+    }
+
+    .customCheckbox[type="checkbox"]+label,
+    .customCheckbox[type="checkbox"]:checked+label::after,
+    #goal_list .customButton {
+        width: 4vw;
+        height: 4vw;
+        background-size: 4vw, 4vw;
+    }
+
+    #goal_list .customButton {
+        margin-top: 0px;
+        font-size: 2vw;
+    }
+
+    #quote {
+        font-size: 10px;
+    }
+
+    #quote span:last-child {
+        margin: 10px 0;
+    }
+
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    #login_form {
+        top: 30vh;
+        width: 62vw;
+    }
+
+    #login_form span {
+        font-size: 12vw;
+        text-align: left;
+        line-height: normal;
+    }
+
+    #goal_form span {
+        font-size: 8vw;
+        width: 100%;
+        line-height: 8vw;
+        text-align: center;
+    }
+
+    #login_input {
+        border-bottom: 2px solid #fff;
+    }
+
+    #login_form .input:last-child {
+        border: 2px solid #fff;
+    }
+
+    #login_input {
+        width: 100%;
+        font-size: 8vw;
+    }
+
+    #login_form .input:last-child {
+        width: 20vw;
+        font-size: 3vw;
+        padding: 1.3vh 2vw;
+    }
+
+
+    #weatherBorder {
+        padding: 5px 5px
+    }
+
+    #weatherDisplay>#icon {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    #weatherDisplay>#temp {
+        font-size: 4vw;
+    }
+
+    #city {
+        display: block;
+        font-size: 1.5vh;
+        letter-spacing: -1px;
+    }
+
+    #middle_area {
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    #hello_clock {
+        grid-row: 3/5;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #clock {
+        grid-row: 2;
+        font-size: 10rem;
+    }
+
+    #greeting {
+        width: 25rem;
+        grid-row: 4;
+        font-size: 4rem;
+        text-align: center;
+        line-height: normal;
+    }
+
+    #logout_btn,
+    #more_btn {
         grid-row: 6;
+        grid-column: 3;
+        width: 15vw;
+        font-size: 2.5vw;
+        align-items: center;
+    }
+
+    #goal_container {
+        grid-template-rows: repeat(4, 0.4fr);
+        grid-row: 5/7;
     }
 
     #goal_form {
