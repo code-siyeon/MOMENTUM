@@ -186,20 +186,15 @@ ul {
     grid-template-rows: repeat(6, 1fr);
 }
 
-#clock,
-#greeting,
-#greeting_user {
-    position: absolute;
-}
 
 /* 시계 */
 #clock {
+    position: absolute;
     justify-self: center;
     grid-row: 2;
     padding: 0;
     font-size: 23vh;
     font-weight: 500;
-    opacity: 90%;
 }
 
 #greeting_container {
@@ -302,23 +297,23 @@ ul {
 
 /* 목표 리스트 */
 #goal_list {
-    margin-top: 1em;
     grid-row: 4;
-    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     position: absolute;
     justify-items: center;
+    margin-top: 1em;
     list-style: none;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, .50);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .50);
 }
 
 #goal_list li {
-    position: relative;
     grid-column: 3;
+    position: relative;
     display: flex;
-    justify-content: center;
+    width: 70%;
+    justify-content: space-evenly;
     margin-top: 1.5vh;
-    width: 50%;
 }
 
 #goal_list li:first-child {
@@ -338,7 +333,7 @@ ul {
     white-space: nowrap;
     padding: 1vh;
     font-size: 3vh;
-    width: 100%;
+    width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -355,6 +350,10 @@ ul {
     height: 3vh;
 }
 
+.customCheckbox[type="checkbox"]+label,
+.customCheckbox[type="checkbox"]:checked+label::after {
+    grid-column: 4;
+}
 
 .customCheckbox[type="checkbox"]+label {
     display: inline-block;
@@ -462,50 +461,65 @@ ul {
     }
 
     #clock {
-        font-size: 17rem;
+        font-size: 12rem;
     }
 
     #greeting_container {
-        grid-row: 5/8;
-        grid-template-rows: repeat(2, 1fr);
+        grid-row: 6/8;
+        grid-template-rows: repeat(3, 1fr);
+        line-height: normal;
     }
 
     #greeting,
     #greeting_user {
         font-size: 5rem;
-        text-align: center;
         line-height: normal;
-        grid-column: 5/7;
     }
 
     #greeting {
         grid-row: 1;
+        grid-column: 3/8;
     }
 
     #greeting_user {
         grid-row: 2;
+        grid-column: 4/7;
+        justify-self: center;
     }
 
     #logout_btn,
     #more_btn {
-        width: 15vw;
+        grid-row: 2;
+        grid-column: 7;
         font-size: 2.5vw;
-        align-items: center;
     }
 
     #goal_form span,
     #goal_form .input {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
+    #goal_list {
+        justify-content: center;
+    }
 
+    #goal_list li {
+        width: 40%;
+    }
 
+    #quote {
+        font-size: 2rem;
+    }
+
+    #quote span:last-child {
+        margin: 15px 0;
+    }
 }
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
     #weatherBorder {
-        padding: 5px 5px
+        padding: 5px 10px;
     }
 
     #weatherDisplay>#icon {
@@ -534,32 +548,34 @@ ul {
 
     #clock {
         grid-row: 1;
-        font-size: 10rem;
+        font-size: 25vw;
     }
 
     #greeting_container {
-        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-row: 3/6;
     }
 
     #greeting,
     #greeting_user {
-        width: 25rem;
-        font-size: 4rem;
-        line-height: normal;
+        font-size: 10vw;
         font-weight: 300;
+    }
+
+    #greeting {
+        grid-column: 2/9;
     }
 
     #greeting_user {
         grid-row: 2;
+        grid-column: 4/7;
+        align-self: center;
     }
 
     #logout_btn,
     #more_btn {
         grid-row: 2;
         align-self: center;
-        width: 15vw;
         font-size: 2.5vw;
     }
 
@@ -570,16 +586,15 @@ ul {
 
     #goal_form {
         grid-row: 1;
-        width: 60vw;
     }
 
     #goal_form span,
     #goal_form .input {
-        font-size: 4.1vw;
+        font-size: 5vw;
     }
 
     #goal_form .input {
-        border-bottom: 2.5px solid #fff;
+        border-bottom: 2px solid #fff;
     }
 
     #goal_form .input,
@@ -589,15 +604,16 @@ ul {
 
     #goal_list {
         grid-row: 2;
-        width: 60vw;
     }
 
     #goal_list li {
         margin-top: 1vh;
+        width: 100%;
+        justify-content: center;
     }
 
     #goal_list li span {
-        width: 47vw;
+        width: 35%;
         padding: 1vw;
         margin: 0 0.5vw;
         font-size: 5vw;
@@ -617,7 +633,7 @@ ul {
     }
 
     #quote {
-        font-size: 10px;
+        font-size: 2.5vw;
     }
 
     #quote span:last-child {
