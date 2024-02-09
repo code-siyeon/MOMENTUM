@@ -9,7 +9,7 @@ const USERNAME_KEY = "username";
 //  요소 선택
 const loginForm = document.querySelector("#login_form");
 const loginInput = document.querySelector("#login_input");
-const greeting = document.querySelector("#greeting");
+const greetingUser = document.querySelector("#greeting_user");
 
 // 로그인 전/후 요소 선택
 const logBefore = document.querySelectorAll(".logBefore, .logBefore *");
@@ -89,13 +89,13 @@ function showLoginForm() {
 
 // 로그인 후 함수
 function showGreeting(username) {
-    greeting.innerText = `See the good, ${username}.`; // 인삿말 설정
+    greetingUser.innerText = `${username}.`; // 인삿말 설정
     changeHidden(logBefore, true); // 로그인 전 요소들을 숨김
     changeHidden(logAfter, false); // 로그인 후 요소들을 표시
-    greeting.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용
+    greetingUser.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용
     // 로그인 후 요소들의 flex/grid 적용
-    changeFlex(afterFlex, true);
-    changeGrid(afterGrid, true);
+    //changeFlex(afterFlex, true);
+    //changeGrid(afterGrid, true);
 }
 
 

@@ -37,16 +37,19 @@
         <main id="middle_area" class="logAfter hidden grid">
             <section id="hello_clock" class="logAfter hidden grid">
                 <h2 id="clock">00:00:00</h2>
-                <h1 id="greeting" class="inline-block"></h1>
-                <button id="more_btn" class="flex">● ● ●</button>
-                <button id="logout_btn" class="flex">Log out</button>
+                <div id="greeting_container" class="logAfter hidden grid">
+                    <h1 id="greeting">See the good,</h1>
+                    <h1 id="greeting_user"></h1>
+                    <button id="logout_btn">Log out</button>
+                    <button id="more_btn">● ● ●</button>
+                </div>
             </section>
             <section id="goal_container" class="logAfter hidden grid">
                 <form id="goal_form" class="logAfter hidden flex">
                     <span>What is your main goal for today?</span>
                     <input class="input" type="text" />
                 </form>
-                <ul id="goal_list" class="logAfter hidden flex"></ul>
+                <ul id="goal_list" class="logAfter hidden grid"></ul>
             </section>
         </main>
         <footer id="quote" class="logAfter hidden flex ">

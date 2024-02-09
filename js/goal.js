@@ -62,18 +62,14 @@ function paintGoal(newGoal) {
     const li = document.createElement("li");
     li.id = newGoal.id;
 
-    const start = createDivElement("start");
     const checkbox = createCheckboxElement(newGoal.id);
     const checkboxLabel = createLabelElement(checkbox.id);
     const span = createSpanElement(newGoal.text);
     const button = createButtonElement();
 
-    start.appendChild(checkbox);
-    start.appendChild(checkboxLabel);
-    start.appendChild(span);
-
-
-    li.appendChild(start);
+    li.appendChild(checkbox);
+    li.appendChild(checkboxLabel);
+    li.appendChild(span);
     li.appendChild(button);
 
     goalList.appendChild(li);

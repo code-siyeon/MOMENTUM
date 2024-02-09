@@ -125,7 +125,7 @@ ul {
 /* 이름 입력 */
 #login_form {
     position: absolute;
-    top: 50vh;
+    top: 42vh;
     width: 100vh;
     display: flex;
     flex-direction: column;
@@ -173,6 +173,7 @@ ul {
 
 #middle_area {
     position: relative;
+    width: 100%;
     height: 90%;
     justify-content: center;
     grid-template-rows: repeat(8, 1fr);
@@ -183,17 +184,17 @@ ul {
     grid-row: 4/7;
     position: relative;
     grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(5, 0.5fr);
-    justify-items: center;
 }
 
 #clock,
-#greeting {
+#greeting,
+#greeting_user {
     position: absolute;
 }
 
 /* 시계 */
 #clock {
+    justify-self: center;
     grid-row: 2;
     padding: 0;
     font-size: 23vh;
@@ -201,25 +202,39 @@ ul {
     opacity: 90%;
 }
 
-
+#greeting_container {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    grid-row: 7;
+    grid-template-columns: repeat(9, 1fr);
+}
 
 /* 인삿말 */
-#greeting {
-    grid-row: 7;
+#greeting,
+#greeting_user {
     font-size: 6vh;
     font-weight: 500;
+    align-self: end;
+}
+
+#greeting {
+    justify-self: center;
+    grid-column: 4/6;
+}
+
+#greeting_user {
+    grid-column: 6;
 }
 
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
-    grid-row: 7;
-    grid-column: 5;
-    display: flex;
-    justify-content: flex-end;
-    width: 8vw;
-    margin-left: 6em;
-    font-size: 1.2vh;
+    grid-row: 1;
+    grid-column: 7;
+    justify-self: left;
+    font-size: 1.5em;
     border: none;
     background: none;
 }
@@ -233,19 +248,19 @@ ul {
     opacity: 0;
 }
 
-#greeting:hover #more_btn {
+#greeting_container:hover #more_btn {
     opacity: 0;
 }
 
-#greeting:hover #logout_btn {
+#greeting_container:hover #logout_btn {
     opacity: 1;
 }
 
 #goal_container {
-    grid-row: 7/8;
+    grid-row: 7;
     grid-template-rows: repeat(6, 0.5fr);
     position: relative;
-    justify-items: center;
+    justify-content: center;
 }
 
 #goal_form,
@@ -287,32 +302,39 @@ ul {
 
 /* 목표 리스트 */
 #goal_list {
+    margin-top: 1em;
     grid-row: 4;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     position: absolute;
+    justify-items: center;
     list-style: none;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, .50);
 }
 
 #goal_list li {
+    position: relative;
+    grid-column: 3;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1.5vh;
-    width: 100%;
+    width: 50%;
 }
 
-#goal_list .start {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 95%;
+#goal_list li:first-child {
+    grid-row: 1;
+}
+
+#goal_list li:nth-child(2) {
+    grid-row: 2;
+}
+
+#goal_list li:nth-child(3) {
+    grid-row: 3;
 }
 
 #goal_list li span {
     display: inline-block;
-    position: relative;
     white-space: nowrap;
     padding: 1vh;
     font-size: 3vh;
@@ -382,8 +404,9 @@ ul {
     margin: 1vw 0;
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px)
+/*and (min-width: 768px)*/
+    {
 
     #login_form {
         top: 30vh;
@@ -423,13 +446,9 @@ ul {
     }
 
 
-    #weatherBorder {
-        padding: 5px 5px
-    }
-
     #weatherDisplay>#icon {
-        width: 6vw;
-        height: 6vw;
+        width: 5vw;
+        height: 5vw;
     }
 
     #weatherDisplay>#temp {
@@ -442,141 +461,49 @@ ul {
         letter-spacing: -1px;
     }
 
-    #middle_area {
-        grid-template-rows: repeat(6, 1fr);
-    }
-
-    #hello_clock {
-        grid-row: 3/5;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     #clock {
-        grid-row: 2;
-        font-size: 10rem;
+        font-size: 17rem;
+    }
+
+    #greeting_container {
+        grid-row: 5/8;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #greeting,
+    #greeting_user {
+        font-size: 5rem;
+        text-align: center;
+        line-height: normal;
+        grid-column: 5/7;
     }
 
     #greeting {
-        width: 25rem;
-        grid-row: 4;
-        font-size: 4rem;
-        text-align: center;
-        line-height: normal;
+        grid-row: 1;
+    }
+
+    #greeting_user {
+        grid-row: 2;
     }
 
     #logout_btn,
     #more_btn {
-        grid-row: 6;
-        grid-column: 3;
         width: 15vw;
         font-size: 2.5vw;
         align-items: center;
     }
 
-    #goal_container {
-        grid-template-rows: repeat(4, 0.4fr);
-        grid-row: 5/7;
-    }
-
-    #goal_form {
-        grid-row: 1;
-        width: 60vw;
-    }
-
     #goal_form span,
     #goal_form .input {
-        font-size: 4.1vw;
+        font-size: 3rem;
     }
 
-    #goal_form .input {
-        border-bottom: 2.5px solid #fff;
-    }
 
-    #goal_form .input,
-    #goal_list {
-        margin-top: 0.5vh;
-    }
-
-    #goal_list {
-        grid-row: 2;
-        width: 60vw;
-    }
-
-    #goal_list li {
-        margin-top: 1vh;
-    }
-
-    #goal_list li span {
-        width: 47vw;
-        padding: 1vw;
-        margin: 0 0.5vw;
-        font-size: 5vw;
-    }
-
-    .customCheckbox[type="checkbox"]+label,
-    .customCheckbox[type="checkbox"]:checked+label::after,
-    #goal_list .customButton {
-        width: 4vw;
-        height: 4vw;
-        background-size: 4vw, 4vw;
-    }
-
-    #goal_list .customButton {
-        margin-top: 0px;
-        font-size: 2vw;
-    }
-
-    #quote {
-        font-size: 10px;
-    }
-
-    #quote span:last-child {
-        margin: 10px 0;
-    }
 
 }
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-    #login_form {
-        top: 30vh;
-        width: 62vw;
-    }
-
-    #login_form span {
-        font-size: 12vw;
-        text-align: left;
-        line-height: normal;
-    }
-
-    #goal_form span {
-        font-size: 8vw;
-        width: 100%;
-        line-height: 8vw;
-        text-align: center;
-    }
-
-    #login_input {
-        border-bottom: 2px solid #fff;
-    }
-
-    #login_form .input:last-child {
-        border: 2px solid #fff;
-    }
-
-    #login_input {
-        width: 100%;
-        font-size: 8vw;
-    }
-
-    #login_form .input:last-child {
-        width: 20vw;
-        font-size: 3vw;
-        padding: 1.3vh 2vw;
-    }
-
-
     #weatherBorder {
         padding: 5px 5px
     }
@@ -603,29 +530,37 @@ ul {
     #hello_clock {
         grid-row: 3/5;
         grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(4, 1fr);
     }
 
     #clock {
-        grid-row: 2;
+        grid-row: 1;
         font-size: 10rem;
     }
 
-    #greeting {
+    #greeting_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-row: 3/6;
+    }
+
+    #greeting,
+    #greeting_user {
         width: 25rem;
-        grid-row: 4;
         font-size: 4rem;
-        text-align: center;
         line-height: normal;
+        font-weight: 300;
+    }
+
+    #greeting_user {
+        grid-row: 2;
     }
 
     #logout_btn,
     #more_btn {
-        grid-row: 6;
-        grid-column: 3;
+        grid-row: 2;
+        align-self: center;
         width: 15vw;
         font-size: 2.5vw;
-        align-items: center;
     }
 
     #goal_container {
