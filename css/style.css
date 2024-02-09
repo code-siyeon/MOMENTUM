@@ -308,7 +308,7 @@ ul {
 }
 
 #goal_list li {
-    grid-column: 3;
+    grid-column: 2/5;
     position: relative;
     display: flex;
     width: 70%;
