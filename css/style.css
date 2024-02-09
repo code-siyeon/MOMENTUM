@@ -333,7 +333,7 @@ ul {
     white-space: nowrap;
     padding: 1vh;
     font-size: 3vh;
-    width: 80%;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -408,7 +408,7 @@ ul {
     {
 
     #login_form {
-        top: 30vh;
+        top: 35vh;
         width: 62vw;
     }
 
@@ -613,7 +613,6 @@ ul {
     }
 
     #goal_list li span {
-        width: 35%;
         padding: 1vw;
         margin: 0 0.5vw;
         font-size: 5vw;
