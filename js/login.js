@@ -94,7 +94,7 @@ function showGreeting(username) {
     changeHidden(logAfter, false); // 로그인 후 요소들을 표시
     greetingUser.classList.add(INLINE_BLOCK); // 로그인 후 inline-block 적용
     // 로그인 후 요소들의 flex/grid 적용
-    //changeFlex(afterFlex, true);
+    changeFlex(afterFlex, true);
     //changeGrid(afterGrid, true);
 }
 
