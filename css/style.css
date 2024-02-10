@@ -200,35 +200,39 @@ ul {
 #greeting_container {
     position: relative;
     justify-self: center;
-    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
     height: 100%;
     grid-row: 7;
-    grid-template-columns: repeat(9, 1fr);
 }
 
 /* 인삿말 */
 #greeting,
 #greeting_user {
+    grid-column: 2/4;
+    width: max-content;
     font-size: 6vh;
     font-weight: 500;
-    align-self: end;
+    align-self: center;
+    grid-row: 1;
 }
 
+/*
 #greeting {
-    justify-self: center;
-    grid-column: 4/6;
+    grid-column: 4/8;
 }
-
+*/
 #greeting_user {
-    grid-column: 6;
+    justify-self: end;
 }
 
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
-    grid-row: 1;
-    grid-column: 7;
     justify-self: left;
+    grid-row: 1;
+    grid-column: 4;
+    margin-left: 10%;
     font-size: 1.5em;
     border: none;
     background: none;
@@ -253,20 +257,22 @@ ul {
 
 #goal_container {
     grid-row: 7;
-    grid-template-rows: repeat(6, 0.5fr);
+    grid-template-columns: 0.5fr;
+    grid-template-rows: repeat(4, 0.5fr);
     position: relative;
-    justify-content: center;
+    justify-self: center;
 }
 
 #goal_form,
 #goal_list,
 #goal_list li {
-    width: 100%;
+    width: 80%;
+    justify-self: center;
 }
 
 /*목표 입력*/
 #goal_form {
-    grid-row: 3;
+    grid-row: 4;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -297,34 +303,18 @@ ul {
 
 /* 목표 리스트 */
 #goal_list {
-    grid-row: 4;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(6, 1fr);
-    position: absolute;
-    justify-items: center;
+    grid-row: 5;
+    flex-direction: column;
     margin-top: 1em;
     list-style: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .50);
 }
 
 #goal_list li {
-    grid-column: 2/6;
-    position: relative;
     display: flex;
-    width: 55%;
+    justify-content: space-evenly;
+    width: 100%;
     margin-top: 1.5vh;
-}
-
-#goal_list li:first-child {
-    grid-row: 1;
-}
-
-#goal_list li:nth-child(2) {
-    grid-row: 2;
-}
-
-#goal_list li:nth-child(3) {
-    grid-row: 3;
 }
 
 #goal_list li span {
@@ -332,7 +322,7 @@ ul {
     white-space: nowrap;
     padding: 1vh;
     font-size: 3vh;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -402,9 +392,7 @@ ul {
     margin: 1vw 0;
 }
 
-@media screen and (max-width: 1024px)
-/*and (min-width: 768px)*/
-    {
+@media screen and (max-width: 1024px) {
     #login_form {
         top: 28vh;
         width: 62vw;
@@ -470,31 +458,35 @@ ul {
 
     #greeting,
     #greeting_user {
-        font-size: 7rem;
+        justify-self: center;
+        font-size: 6rem;
         line-height: normal;
+        grid-column: 2/4;
     }
 
     #greeting {
         grid-row: 1;
-        grid-column: 3/8;
     }
 
     #greeting_user {
         grid-row: 2;
-        grid-column: 4/7;
-        justify-self: center;
     }
 
     #logout_btn,
     #more_btn {
+        justify-self: right;
         grid-row: 2;
-        grid-column: 7/9;
+        grid-column: 3;
         font-size: 2.5vw;
+    }
+
+    #goal_form {
+        width: 98%;
     }
 
     #goal_form span,
     #goal_form .input {
-        font-size: 4rem;
+        font-size: 3.8rem;
     }
 
     #goal_list {
@@ -504,7 +496,6 @@ ul {
 
     #goal_list li {
         grid-column: 1/7;
-        width: 100%;
     }
 
     #quote {
@@ -554,6 +545,7 @@ ul {
     #greeting_container {
         grid-template-rows: repeat(2, 1fr);
         grid-row: 3/6;
+        grid-template-columns: 0fr;
     }
 
     #greeting,
@@ -562,13 +554,13 @@ ul {
         font-weight: 300;
     }
 
-    #greeting {
+    /*#greeting {
         grid-column: 2/9;
-    }
+    }*/
 
     #greeting_user {
         grid-row: 2;
-        grid-column: 4/7;
+        /*grid-column: 4/7;*/
         align-self: center;
     }
 
@@ -579,8 +571,13 @@ ul {
     #logout_btn,
     #more_btn {
         grid-row: 2;
+        justify-self: baseline;
         align-self: center;
         font-size: 2.5vw;
+    }
+
+    #more_btn {
+        font-weight: 300;
     }
 
     #goal_container {
@@ -592,10 +589,17 @@ ul {
         grid-row: 1;
     }
 
+    #goal_form,
+    #goal_list,
+    #goal_list li {
+        width: 100%;
+        justify-self: center;
+    }
+
     #goal_form span,
     #goal_form .input {
-        font-size: 5vw;
-        font-weight: 300;
+        font-size: 4.9vw;
+        font-weight: 400;
     }
 
     #goal_form .input {
@@ -613,7 +617,7 @@ ul {
 
     #goal_list li {
         margin-top: 1vh;
-        width: 100%;
+        width: 70vw;
         justify-content: center;
     }
 
