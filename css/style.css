@@ -209,7 +209,7 @@ ul {
 #greeting_container {
     position: absolute;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 50%;
+    max-width: 80%;
     height: 100%;
     grid-row: 5;
 }
@@ -393,17 +393,12 @@ ul {
 }
 
 #quote span:last-child {
-    margin: 2vh 0 3vh;
+    margin: 3vh 0 2vh;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1441px) {
     #greeting_container {
-        width: 50%;
-    }
-
-    #logout_btn,
-    #more_btn {
-        width: max-content;
+        max-width: 40%;
     }
 }
 
