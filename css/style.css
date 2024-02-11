@@ -517,7 +517,7 @@ ul {
     }
 
     #quote span:last-child {
-        margin: 15px 0;
+        margin: 20px 0;
     }
 }
 
@@ -562,10 +562,14 @@ ul {
         grid-template-columns: 0fr;
     }
 
+    #clock {
+        font-weight: 400;
+    }
+
     #greeting,
     #greeting_user {
         font-size: 10vw;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     #greeting {
