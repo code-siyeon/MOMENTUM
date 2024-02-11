@@ -209,7 +209,7 @@ ul {
 #greeting_container {
     position: absolute;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 60%;
+    max-width: 50%;
     height: 100%;
     grid-row: 5;
 }
@@ -237,6 +237,7 @@ ul {
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
+    width: max-content;
     justify-self: left;
     grid-row: 1;
     grid-column: 4;
@@ -397,7 +398,7 @@ ul {
 
 @media screen and (max-width: 1440px) {
     #greeting_container {
-        width: 60%;
+        width: 50%;
     }
 }
 
@@ -453,8 +454,12 @@ ul {
         font-size: 20rem;
     }
 
+    #hello_clock {
+        grid-template-rows: repeat(3, 1fr);
+    }
+
     #greeting_container {
-        grid-row: 3/5;
+        grid-row: 3;
         grid-template-rows: repeat(3, 1fr);
         line-height: normal;
     }
