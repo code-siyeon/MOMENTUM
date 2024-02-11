@@ -400,6 +400,11 @@ ul {
     #greeting_container {
         width: 50%;
     }
+
+    #logout_btn,
+    #more_btn {
+        width: max-content;
+    }
 }
 
 @media screen and (max-width: 1024px) {
