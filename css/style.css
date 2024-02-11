@@ -393,7 +393,7 @@ ul {
 }
 
 #quote span:last-child {
-    margin: 1vw 0;
+    margin: 15px 0;
 }
 
 @media screen and (max-width: 1440px) {
@@ -517,7 +517,7 @@ ul {
     }
 
     #quote span:last-child {
-        margin: 20px 0;
+        margin: 15px 0;
     }
 }
 
