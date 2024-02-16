@@ -208,60 +208,59 @@ ul {
 
 #greeting_container {
     position: absolute;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 80%;
-    height: 100%;
+    align-self: baseline;
+    align-items: center;
+    flex-direction: row;
     grid-row: 5;
+    gap: 1vw;
+}
+
+#greeting,
+#greeting_user,
+#greeting,
+#greeting_user {
+    flex: 0 0 auto;
 }
 
 /* 인삿말 */
 #greeting,
 #greeting_user {
-    width: max-content;
     font-size: 6vh;
     font-weight: 500;
-    justify-self: center;
-    align-self: center;
-    grid-row: 1;
 }
 
-
 #greeting {
-    grid-column: 2;
+    order: 1;
 }
 
 #greeting_user {
-    grid-column: 3;
+    order: 2;
 }
 
 /* ● ● ● 버튼, 로그아웃버튼 */
 #logout_btn,
 #more_btn {
-    width: max-content;
-    justify-self: left;
-    grid-row: 1;
-    grid-column: 4;
-    margin-left: 10%;
-    font-size: 1.5em;
+    order: 3;
+    font-size: 2vh;
     border: none;
     background: none;
 }
 
 
 #more_btn {
-    opacity: 1;
+    display: block;
 }
 
 #logout_btn {
-    opacity: 0;
+    display: none;
 }
 
 #greeting_container:hover #more_btn {
-    opacity: 0;
+    display: none;
 }
 
 #greeting_container:hover #logout_btn {
-    opacity: 1;
+    display: block;
 }
 
 #goal_container {
@@ -396,11 +395,6 @@ ul {
     margin: 3vh 0 2vh;
 }
 
-@media screen and (min-width: 1441px) {
-    #greeting_container {
-        max-width: 40%;
-    }
-}
 
 @media screen and (max-width: 1024px) {
     #login_form {
@@ -459,8 +453,8 @@ ul {
     }
 
     #greeting_container {
+        flex-direction: column;
         grid-row: 3;
-        grid-template-rows: repeat(3, 1fr);
         line-height: normal;
     }
 
@@ -469,22 +463,19 @@ ul {
         justify-self: center;
         font-size: 6rem;
         line-height: normal;
-        grid-column: 2/4;
     }
 
     #greeting {
-        grid-row: 2;
+        order: -1;
     }
 
     #greeting_user {
-        grid-row: 3;
+        order: 1;
     }
 
     #logout_btn,
     #more_btn {
-        justify-self: right;
-        grid-row: 3;
-        grid-column: 3;
+        order: 2;
         font-size: 2.5vw;
     }
 
@@ -552,9 +543,7 @@ ul {
     }
 
     #greeting_container {
-        grid-template-rows: repeat(2, 1fr);
         grid-row: 3/6;
-        grid-template-columns: 0fr;
     }
 
     #clock {
@@ -567,19 +556,6 @@ ul {
         font-weight: 400;
     }
 
-    #greeting {
-        grid-row: 1;
-    }
-
-    #greeting_user {
-        grid-row: 2;
-        align-self: center;
-    }
-
-    #more_btn {
-        font-size: 2vw;
-    }
-
     #logout_btn,
     #more_btn {
         grid-row: 2;
@@ -589,6 +565,7 @@ ul {
     }
 
     #more_btn {
+        font-size: 2vw;
         font-weight: 300;
     }
 
