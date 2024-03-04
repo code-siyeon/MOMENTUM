@@ -519,6 +519,7 @@ ul {
     }
 
     #weatherDisplay>#temp {
+        top: -1vh;
         font-size: 4vw;
     }
 
