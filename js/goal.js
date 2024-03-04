@@ -1,3 +1,5 @@
+'use strict';
+
 // 목표 리스트를 저장할 배열
 let goals = [];
 

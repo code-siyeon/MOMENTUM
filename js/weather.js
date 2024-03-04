@@ -1,3 +1,5 @@
+'use strict';
+
 // OpenWeatherMap API 키
 const API_KEY = "e007be45d0078d834fcfcc52f39f9d01"
 

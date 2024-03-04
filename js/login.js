@@ -1,3 +1,5 @@
+'use strict';
+
 // 상수 정의
 const HIDDEN_CLASSNAME = "hidden";
 const GRID_CLASSNAME = "gird";

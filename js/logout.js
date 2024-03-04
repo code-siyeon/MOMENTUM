@@ -1,3 +1,5 @@
+'use strict';
+
 // 로그아웃 버튼을 선택
 const logoutBtn = document.querySelector("#logout_btn");
 const moreBtn = document.querySelector("#more_btn");

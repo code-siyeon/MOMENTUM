@@ -1,3 +1,5 @@
+'use strict';
+
 // 명언을 담고 있는 객체들의 배열
 // 각각 명언(quote)과 저자(author)를 가지고 있음
 const quotes = [

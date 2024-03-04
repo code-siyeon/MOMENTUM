@@ -112,9 +112,9 @@ ul {
 
 #temp {
     position: relative;
-    top: -1vh;
+    top: -1.5vh;
     margin-top: 0;
-    font-size: 3.5vh;
+    font-size: 3vh;
 }
 
 #city {
@@ -208,7 +208,7 @@ ul {
 
 #greeting_container {
     position: absolute;
-    align-self: baseline;
+    align-self: end;
     align-items: center;
     flex-direction: row;
     grid-row: 5;
@@ -279,7 +279,7 @@ ul {
 /*목표 입력*/
 #goal_form {
     position: relative;
-    grid-row: 4;
+    grid-row: 3;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -311,7 +311,7 @@ ul {
 /* 목표 리스트 */
 #goal_list {
     position: absolute;
-    grid-row: 5;
+    grid-row: 4;
     flex-direction: column;
     margin-top: 1em;
     list-style: none;
@@ -529,25 +529,22 @@ ul {
     }
 
     #middle_area {
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(8, 1fr);
     }
 
     #hello_clock {
-        grid-row: 3/5;
+        grid-row: 3/6;
         grid-template-rows: repeat(6, 1fr);
     }
 
     #clock {
         grid-row: 1;
         font-size: 25vw;
+        font-weight: 400;
     }
 
     #greeting_container {
-        grid-row: 3/6;
-    }
-
-    #clock {
-        font-weight: 400;
+        grid-row: 5/7;
     }
 
     #greeting,
@@ -558,9 +555,7 @@ ul {
 
     #logout_btn,
     #more_btn {
-        grid-row: 2;
-        justify-self: baseline;
-        align-self: center;
+        margin-top: 8%;
         font-size: 2.5vw;
     }
 
@@ -571,7 +566,7 @@ ul {
 
     #goal_container {
         grid-template-rows: repeat(4, 0.4fr);
-        grid-row: 5/7;
+        grid-row: 7/9;
     }
 
     #goal_form {

@@ -1,3 +1,5 @@
+'use strict';
+
 // 배경 이미지 파일 이름 배열
 const images = [
     "0.jpg",

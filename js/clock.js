@@ -1,3 +1,5 @@
+'use strict';
+
 // 시계를 표시할 요소 선택
 const clock = document.querySelector("h2#clock");
 
