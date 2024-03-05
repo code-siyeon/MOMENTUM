@@ -530,16 +530,16 @@ ul {
     }
 
     #middle_area {
-        grid-template-rows: repeat(8, 1fr);
+        grid-template-rows: repeat(10, 1fr);
     }
 
     #hello_clock {
-        grid-row: 3/6;
+        grid-row: 2/7;
         grid-template-rows: repeat(6, 1fr);
     }
 
     #clock {
-        grid-row: 1;
+        grid-row: 3;
         font-size: 25vw;
         font-weight: 400;
     }
@@ -552,6 +552,10 @@ ul {
     #greeting_user {
         font-size: 10vw;
         font-weight: 400;
+    }
+
+    #greeting_user {
+        margin-top: 5%;
     }
 
     #logout_btn,
@@ -571,7 +575,7 @@ ul {
 
     #goal_container {
         grid-template-rows: repeat(4, 0.4fr);
-        grid-row: 7/9;
+        grid-row: 8/10;
     }
 
     #goal_form {
