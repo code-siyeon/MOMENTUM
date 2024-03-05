@@ -534,7 +534,7 @@ ul {
     }
 
     #hello_clock {
-        grid-row: 2/7;
+        grid-row: 2/8;
         grid-template-rows: repeat(6, 1fr);
     }
 
@@ -545,7 +545,7 @@ ul {
     }
 
     #greeting_container {
-        grid-row: 5/7;
+        grid-row: 5/8;
     }
 
     #greeting,
@@ -560,17 +560,12 @@ ul {
 
     #logout_btn,
     #more_btn {
-        margin-top: 8%;
-        font-size: 2vw;
-    }
-
-    #logout_btn {
-        font-size: 3vw;
+        margin-top: 5%;
+        font-size: 3.5vw;
     }
 
     #more_btn {
-        font-size: 2vw;
-        font-weight: 300;
+        font-family: fantasy;
     }
 
     #goal_container {
