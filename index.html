@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/dycalendar.css">
     <link rel="icon" href="./img/logo.ico" type="image/svg+xml">
-    <title>Momentum</title>
     <script defer src="js/background.js"></script>
     <script defer src="js/login.js"></script>
     <script defer src="js/logout.js"></script>
@@ -15,51 +16,101 @@
     <script defer src="js/goal.js"></script>
     <script defer src="js/quotes.js"></script>
     <script defer src="js/weather.js"></script>
+    <script defer src="js/menu.js"></script>
+
+    <title>Momentum</title>
 </head>
 
 <body>
     <div id="wrap">
         <div id="backgroundBorder">
-            <img id="backgroundImage"></img>
-            <img id="mobileImage"></img>
+            <button id="prevButton" class="logAfter">◁</button>
+            <button id="nextButton" class="logAfter">▷</button>
+            <img id="backgroundImage" class="slide"></img>
+            <img id="mobileImage" class="slide"></img>
         </div>
-        <header id="top_area">
-            <div id="si_yeon" class="logAfter hidden">
-                <span>Cloned</span>
-                <span>By. Si Yeon</span>
-            </div>
-            <div id="weatherBorder" class="logAfter flex hidden">
-                <div id="weatherDisplay">
-                    <img id="icon"></img>
-                    <span id="temp"></span>
-                </div>
-                <span id="city" class="hidden"></span>
-            </div>
-        </header>
+
         <form id="login_form" class="logBefore hidden">
             <span>Hello, what's your name?</span>
             <input id="login_input" class="input" required maxlength="8" type="text" placeholder="" />
             <input class="input" type="submit" value="Continue  >"></input>
         </form>
-        <main id="middle_area" class="logAfter hidden grid">
-            <section id="hello_clock" class="logAfter hidden grid">
-                <h2 id="clock">00:00:00</h2>
-                <div id="greeting_container" class="logAfter hidden flex">
-                    <h1 id="greeting">See the good,</h1>
-                    <h1 id="greeting_user"></h1>
-                    <button id="logout_btn">Log out</button>
-                    <button id="more_btn">● ● ●</button>
-                </div>
-            </section>
-            <section id="goal_container" class="logAfter hidden grid">
+
+        <header id="top_area">
+            <div id="menu" class="logAfter hidden">
+                <nav id="toggle_menu">
+                    <button class="menu_btn"></button>
+                    <div id="menu_content">
+                        <div>
+                            <button class="menu_back_btn"></button>
+                        </div>
+                        <section>
+                            <div id="body">
+                                <div class="container">
+                                    <div id="dycalendar"></div>
+                                    <script src="js/dycalendar.js"></script>
+                                    <script>
+                                        dycalendar.draw({
+                                            target: "#dycalendar",
+                                            type: "month",
+                                            dayformat: "full",
+                                            monthformat: "full",
+                                            highlighttargetdate: true,
+                                            prevnextbutton: "show"
+                                        })
+                                    </script>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="weatherBorder">
+                            <span>오늘의 날씨</span>
+                            <div id="weatherDisplay">
+                                <img id="icon" />
+                                <span id="temp"></span>
+                            </div>
+                            <span id="city" class="hidden"></span>
+                        </section>
+
+                        <section>
+                            <div id="stock">
+                                <span>증시</span>
+                            </div>
+                        </section>
+                        <footer>
+                            <span>공지</span>
+                            <a href="#">전체보기 &nbsp; ></a>
+                        </footer>
+                        <div>
+                            <button class="menu__logout_btn">로그아웃</button>
+                        </div>
+                    </div>
+            </div>
+            <div id="menu_overlay"></div>
+            </nav>
+
+
+            <div id="si_yeon" class="logAfter hidden">
+                <span>Si Yeon</span>
+                <span>Clon coding</span>
+            </div>
+        </header>
+
+        <main id="middle_area" class="logAfter hidden flex">
+            <h2 id="clock">00:00:00</h2>
+            <div id="greeting_container" class="logAfter hidden flex">
+                <h1 id="greeting">See the good,</h1>
+                <h1 id="greeting_user"></h1>
+            </div>
+            <div id="goal_container" class="logAfter hidden">
                 <form id="goal_form" class="logAfter hidden flex">
                     <span>What is your main goal for today?</span>
-                    <input class="input" type="text" />
+                    <input class="input" type="text">
                 </form>
                 <ul id="goal_list" class="logAfter hidden flex"></ul>
-            </section>
+            </div>
         </main>
-        <footer id="quote" class="logAfter hidden flex ">
+
+        <footer id="quote" class="logAfter hidden flex">
             <span></span>
             <span></span>
         </footer>

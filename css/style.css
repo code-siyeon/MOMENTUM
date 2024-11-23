@@ -32,7 +32,7 @@ ul {
 
 
 #wrap {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -41,21 +41,6 @@ ul {
 }
 
 
-.flex {
-    display: flex;
-}
-
-.grid {
-    display: grid;
-}
-
-.hidden {
-    display: none;
-}
-
-.inline-block {
-    display: inline-block;
-}
 
 #backgroundBorder {
     overflow: hidden;
@@ -72,55 +57,98 @@ ul {
     object-fit: cover;
 }
 
+#login_form .input:last-child,
+#logout_btn,
+#menu_btn {
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#top_area,
+#middle_area,
+#clock,
+#greeting_container,
+#goal_container {
+    position: relative;
+}
+
+
+
+#prevButton,
+#nextButton {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: #fff;
+    background-color: #0000005e;
+    border: none;
+    border-radius: 12%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+#menu_overlay,
+#menu_content {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    transition: 0.15s ease;
+}
 
 #backgroundImage,
 #mobileImage {
     filter: brightness(80%);
-    z-index: -1;
 }
 
-#top_area {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100vw;
-    height: 12vh;
+
+.menu_btn,
+.menu_back_btn {
+    border: none;
+    cursor: pointer;
+    font-size: 2vh;
 }
 
-#si_yeon {
-    padding: 14.5px;
-}
-
-#si_yeon>span {
-    display: block;
-    margin-bottom: 1vh;
-    font-size: 1.5vh;
-}
-
-/* 날씨 */
-#weatherBorder {
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 15px;
-}
-
-#icon {
-    width: 5vh;
-    height: 5vh;
-}
-
-#temp {
+#weatherBorder,
+#stock,
+#calendar {
     position: relative;
-    top: -1.5vh;
-    margin-top: 0;
-    font-size: 3vh;
+    background-color: #fff;
 }
 
-#city {
-    display: block;
-    font-size: 1.9vh;
+#weatherBorder,
+#stock,
+#calendar,
+.menu__logout_btn {
+    margin: 8px;
 }
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+
 
 /* 이름 입력 */
 #login_form {
@@ -130,8 +158,8 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
-
 
 #login_form span {
     font-size: 8vh;
@@ -151,14 +179,6 @@ ul {
     outline: none;
 }
 
-#login_form .input:last-child,
-#logout_btn,
-#more_btn {
-    cursor: pointer;
-    font-weight: 700;
-    border-radius: 5px;
-    color: #fff;
-}
 
 #login_form .input:last-child {
     position: relative;
@@ -170,103 +190,223 @@ ul {
     font-size: 1.3vw;
 }
 
-#middle_area,
-#hello_clock,
-#greeting_container,
-#goal_container {
-    position: relative;
+
+
+#top_area {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
 }
+
+
+#menu_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 44vh;
+    background-color: #f8f8f8;
+    padding: 0 0.5rem;
+    font-size: medium;
+    overflow-x: hidden;
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+#menu_content>section {
+    border-radius: 4px;
+}
+
+#menu_content.active {
+    transform: translateX(0);
+}
+
+
+
+.menu_btn {
+    width: 5vh;
+    height: 5vh;
+    margin: 8px;
+    background: url(/img/menu.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu_back_btn {
+    display: none;
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    background: url(/img/x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu_back_btn.active {
+    top: 0;
+    left: 42%;
+    margin: 14px;
+    display: block;
+    z-index: 1;
+}
+
+
+#body {
+    display: grid;
+    place-items: center;
+}
+
+#menu_content>section,
+#menu_content button {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .1),
+        -10px -10px 10px rgba(255, 255, 255, .1),
+        inset 10px 10px 10px rgba(0, 0, 0, .1),
+        inset -10px -10px 10px rgba(255, 255, 255, .1);
+
+}
+
+#menu_content>section {
+    position: relative;
+    width: 37vh;
+    border-radius: 10px;
+    color: black;
+}
+
+
+.container {
+    height: 34vh;
+}
+
+.container #dycalendar {
+    padding: 20px;
+}
+
+#dycalendar table {
+    margin-top: 30px;
+}
+
+#dycalendar table td {
+    font-weight: 600;
+    color: #444;
+    padding: 5px;
+}
+
+#dycalendar .dycalendar-header {
+    font-weight: 700;
+    color: #444;
+}
+
+#dycalendar .dycalendar-target-date {
+    color: #f8f8f8;
+    background: #444;
+}
+
+/* 날씨 */
+#weatherBorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+#icon {
+    width: 5vh;
+    height: 5vh;
+}
+
+#temp {
+    position: relative;
+    top: -1.5vh;
+    margin-top: 0;
+    font-size: 3vh;
+}
+
+#city {
+    display: block;
+    font-size: 1.9vh;
+}
+
+
+.menu__logout_btn {
+    display: block;
+    background: none;
+    border-radius: 12px;
+    bottom: 0;
+}
+
+
+.menu__logout_btn:hover {
+    text-decoration: underline;
+}
+
+
+#menu_overlay {
+    right: 0;
+    width: 85%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#menu_overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#si_yeon {
+    padding: 14.5px;
+}
+
+#si_yeon>span {
+    display: block;
+    margin-bottom: 0.7vh;
+    font-size: 1.5vh;
+    text-align: end;
+}
+
 
 #middle_area {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 25%;
     width: 100%;
-    height: 90%;
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: 1fr;
+    height: 60%;
 }
 
-#hello_clock {
-    grid-row: 3/6;
-    grid-template-rows: repeat(4, 1fr);
-}
+
+
 
 
 /* 시계 */
 #clock {
-    position: absolute;
-    justify-self: center;
-    grid-row: 2;
-    padding: 0;
     font-size: 23vh;
     font-weight: 500;
 }
 
-#greeting_container,
-#goal_container {
-    justify-self: center;
-    justify-content: center;
-}
-
 #greeting_container {
-    position: absolute;
-    align-self: end;
     align-items: center;
-    flex-direction: row;
-    grid-row: 5;
-    gap: 1vw;
 }
 
-#greeting,
-#greeting_user,
-#greeting,
-#greeting_user {
-    flex: 0 0 auto;
-}
 
 /* 인삿말 */
 #greeting,
 #greeting_user {
+    margin-top: 10%;
     font-size: 6vh;
     font-weight: 500;
 }
 
-#greeting {
-    order: 1;
-}
-
-#greeting_user {
-    order: 2;
-}
-
-/* ● ● ● 버튼, 로그아웃버튼 */
-#logout_btn,
-#more_btn {
-    order: 3;
-    font-size: 2vh;
-    border: none;
-    background: none;
-}
-
-
-#more_btn {
-    display: block;
-}
-
-#logout_btn {
-    display: none;
-}
-
-#greeting_container:hover #more_btn {
-    display: none;
-}
-
-#greeting_container:hover #logout_btn {
-    display: block;
-}
-
 #goal_container {
-    grid-row: 6;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 0.5fr);
+    margin-bottom: 6%;
 }
 
 #goal_form,
@@ -278,8 +418,6 @@ ul {
 
 /*목표 입력*/
 #goal_form {
-    position: relative;
-    grid-row: 3;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -393,246 +531,4 @@ ul {
 
 #quote span:last-child {
     margin: 3vh 0 2vh;
-}
-
-
-@media screen and (max-width: 1024px) {
-    #login_form {
-        top: 28vh;
-        width: 62vw;
-    }
-
-    #login_form span {
-        font-size: 12vw;
-        text-align: left;
-        line-height: normal;
-    }
-
-
-    #login_input {
-        border-bottom: 2px solid #fff;
-    }
-
-    #login_form .input:last-child {
-        border: 2px solid #fff;
-    }
-
-    #login_input {
-        width: 100%;
-        font-size: 8vw;
-    }
-
-    #login_form .input:last-child {
-        width: 20vw;
-        font-size: 3vw;
-        padding: 1.3vh 2vw;
-    }
-
-
-    #weatherDisplay>#icon {
-        width: 5vw;
-        height: 5vw;
-    }
-
-    #weatherDisplay>#temp {
-        font-size: 4vw;
-    }
-
-    #city {
-        display: block;
-        font-size: 1.5vh;
-        letter-spacing: -1px;
-    }
-
-    #clock {
-        font-size: 20rem;
-    }
-
-    #hello_clock {
-        grid-template-rows: repeat(3, 1fr);
-    }
-
-    #greeting_container {
-        flex-direction: column;
-        grid-row: 3;
-        line-height: normal;
-    }
-
-    #greeting,
-    #greeting_user {
-        justify-self: center;
-        font-size: 6rem;
-        line-height: normal;
-    }
-
-    #greeting {
-        order: -1;
-    }
-
-    #greeting_user {
-        order: 1;
-    }
-
-    #logout_btn,
-    #more_btn {
-        order: 2;
-        font-size: 2.5vw;
-    }
-
-    #goal_form,
-    #goal_form span {
-        width: 100%;
-    }
-
-    #goal_form span,
-    #goal_form .input {
-        font-size: 3.8rem;
-    }
-
-    #goal_list {
-        width: 600px;
-        justify-self: center;
-    }
-
-    #goal_list li {
-        grid-column: 1/7;
-    }
-
-    #quote {
-        font-size: 2rem;
-    }
-
-    #quote span:last-child {
-        margin: 15px 0;
-    }
-}
-
-/* 모바일 */
-@media screen and (max-width: 767px) {
-    #weatherBorder {
-        padding: 5px 10px;
-    }
-
-    #weatherDisplay>#icon {
-        width: 6vw;
-        height: 6vw;
-    }
-
-    #weatherDisplay>#temp {
-        top: -1vh;
-        font-size: 4vw;
-    }
-
-    #city {
-        display: block;
-        font-size: 1.5vh;
-        letter-spacing: -1px;
-    }
-
-    #middle_area {
-        grid-template-rows: repeat(10, 1fr);
-    }
-
-    #hello_clock {
-        grid-row: 2/8;
-        grid-template-rows: repeat(6, 1fr);
-    }
-
-    #clock {
-        grid-row: 3;
-        font-size: 25vw;
-        font-weight: 400;
-    }
-
-    #greeting_container {
-        grid-row: 5/8;
-    }
-
-    #greeting,
-    #greeting_user {
-        font-size: 10vw;
-        font-weight: 400;
-    }
-
-    #greeting_user {
-        margin-top: 5%;
-    }
-
-    #logout_btn,
-    #more_btn {
-        margin-top: 5%;
-        font-size: 3.5vw;
-    }
-
-    #more_btn {
-        font-family: fantasy;
-    }
-
-    #goal_container {
-        grid-template-rows: repeat(4, 0.4fr);
-        grid-row: 9/10;
-    }
-
-    #goal_form {
-        grid-row: 1;
-    }
-
-    #goal_form,
-    #goal_list,
-    #goal_list li {
-        width: 100%;
-        justify-self: center;
-    }
-
-    #goal_form span,
-    #goal_form .input {
-        font-size: 4.9vw;
-        font-weight: 400;
-    }
-
-    #goal_form .input {
-        border-bottom: 2px solid #fff;
-    }
-
-    #goal_form .input,
-    #goal_list {
-        margin-top: 0.5vh;
-    }
-
-    #goal_list {
-        grid-row: 2;
-    }
-
-    #goal_list li {
-        margin-top: 1vh;
-        width: 70vw;
-        justify-content: center;
-    }
-
-    #goal_list li span {
-        padding: 1vw;
-        margin: 0 0.5vw;
-        font-size: 5vw;
-    }
-
-    .customCheckbox[type="checkbox"]+label,
-    .customCheckbox[type="checkbox"]:checked+label::after,
-    #goal_list .customButton {
-        width: 4vw;
-        height: 4vw;
-        background-size: 4vw, 4vw;
-    }
-
-    #goal_list .customButton {
-        margin-top: 0px;
-        font-size: 2vw;
-    }
-
-    #quote {
-        font-size: 2.5vw;
-    }
-
-    #quote span:last-child {
-        margin: 10px 0;
-    }
 }
