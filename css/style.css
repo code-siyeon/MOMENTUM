@@ -248,7 +248,7 @@ ul {
 
 }
 
-.menu_back_btn>img.active {
+.menu_back_btn.active {
     top: 0;
     left: 42%;
     margin: 14px;
