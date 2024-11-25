@@ -232,7 +232,7 @@ ul {
     width: 5vh;
     height: 5vh;
     margin: 8px;
-    background: url("/img/menu.png");
+    background: url(/img/menu.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -242,7 +242,7 @@ ul {
     position: absolute;
     width: 3vh;
     height: 3vh;
-    background: url("/img/x.png");
+    background: url(/img/x.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
