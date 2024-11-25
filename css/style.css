@@ -228,7 +228,7 @@ ul {
 
 
 
-.menu_btn {
+.menu_btn>img {
     width: 5vh;
     height: 5vh;
     margin: 8px;
@@ -237,7 +237,7 @@ ul {
     background-size: contain;
 }
 
-.menu_back_btn {
+.menu_back_btn>img {
     display: none;
     position: absolute;
     width: 3vh;
@@ -247,7 +247,7 @@ ul {
     background-size: contain;
 }
 
-.menu_back_btn.active {
+.menu_back_btn>img.active {
     top: 0;
     left: 42%;
     margin: 14px;
