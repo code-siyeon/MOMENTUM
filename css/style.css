@@ -232,7 +232,7 @@ ul {
     width: 5vh;
     height: 5vh;
     margin: 8px;
-    background: url(/img/menu.png);
+    background: url(../img/menu.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -242,7 +242,7 @@ ul {
     position: absolute;
     width: 3vh;
     height: 3vh;
-    background: url(/img/x.png);
+    background: url(../img/x.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -256,7 +256,7 @@ ul {
 }
 
 
-#body {
+#calendar {
     display: grid;
     place-items: center;
 }
@@ -279,11 +279,11 @@ ul {
 
 
 .container {
-    height: 34vh;
+    height: 32vh;
 }
 
 .container #dycalendar {
-    padding: 20px;
+    padding: 10px;
 }
 
 #dycalendar table {
