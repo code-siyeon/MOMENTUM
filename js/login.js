@@ -2,7 +2,6 @@
 
 // 상수 정의
 const HIDDEN_CLASSNAME = "hidden";
-const FLEX_CLASSNAME = "flex";
 const USERNAME_KEY = "username";
 
 // 요소 선택
@@ -13,16 +12,11 @@ const greetingUser = document.querySelector("#greeting_user");
 // 로그인 전/후 요소 선택
 const logBefore = document.querySelectorAll(".logBefore, .logBefore *");
 const logAfter = document.querySelectorAll(".logAfter, .logAfter *");
-const afterFlex = document.querySelectorAll(".logAfter.flex, .logAfter .flex");
+
 
 // 요소의 가시성을 변경하는 함수
 function toggleVisibility(elements, isHidden) {
     elements.forEach(element => element.classList.toggle(HIDDEN_CLASSNAME, isHidden));
-}
-
-// flex 를 변경하는 함수
-function toggleFlex(elements, isFlex) {
-    elements.forEach(element => element.classList.toggle(FLEX_CLASSNAME, isFlex));
 }
 
 // 로그인 처리 함수
@@ -36,31 +30,28 @@ function onLoginSubmit(event) {
         loginInput.focus();
     } else {
         localStorage.setItem(USERNAME_KEY, username);
-        showGreeting(username);
+        updateUI(username);
     }
 }
 
-// 로그인 전 요소 표시 함수
-function showLoginForm() {
-    toggleVisibility(logBefore, false);
-    toggleVisibility(logAfter, true);
-    toggleFlex(afterFlex, false);
-    loginInput.value = "";
+// UI 업데이트 함수
+function updateUI(username) {
+    if (username) { //로그인 후
+        greetingUser.innerText = `${username}.`;
+        toggleVisibility(logBefore, true);
+        toggleVisibility(logAfter, false);
+    } else { // 로그인 전
+        toggleVisibility(logBefore, false);
+        toggleVisibility(logAfter, true);
+        loginInput.value = "";
+    }
+}
+
+// 초기 상태 설정
+function init() {
+    const savedUsername = localStorage.getItem(USERNAME_KEY);
+    updateUI(savedUsername);
     loginForm.addEventListener("submit", onLoginSubmit);
 }
 
-// 로그인 후 요소 표시 함수
-function showGreeting(username) {
-    greetingUser.innerText = `${username}.`;
-    toggleVisibility(logBefore, true);
-    toggleVisibility(logAfter, false);
-    toggleFlex(afterFlex, true);
-}
-
-// 저장된 사용자 이름 확인 및 초기 상태 설정
-const savedUsername = localStorage.getItem(USERNAME_KEY);
-if (savedUsername) {
-    showGreeting(savedUsername);
-} else {
-    showLoginForm();
-}
+init();

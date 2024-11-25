@@ -128,13 +128,6 @@ ul {
     margin: 8px;
 }
 
-.flex {
-    display: flex;
-}
-
-.grid {
-    display: grid;
-}
 
 .hidden {
     display: none;
@@ -241,7 +234,7 @@ ul {
     position: absolute;
     width: 3vh;
     height: 3vh;
-    margin-top: 8px;
+    margin-top: 3vh;
     background: url(../img/x.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -250,8 +243,6 @@ ul {
 
 .menu_back_btn.active {
     top: 0;
-    left: 42%;
-    margin: 14px;
     display: block;
     z-index: 1;
 }
@@ -263,7 +254,7 @@ ul {
 }
 
 #menu_content>section,
-#menu_content button {
+.menu__logout_btn {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .1),
         -10px -10px 10px rgba(255, 255, 255, .1),
         inset 10px 10px 10px rgba(0, 0, 0, .1),
@@ -394,6 +385,7 @@ ul {
 }
 
 #greeting_container {
+    display: flex;
     align-items: center;
 }
 
@@ -419,6 +411,7 @@ ul {
 
 /*목표 입력*/
 #goal_form {
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -449,8 +442,8 @@ ul {
 
 /* 목표 리스트 */
 #goal_list {
+    display: flex;
     position: absolute;
-    grid-row: 4;
     flex-direction: column;
     margin-top: 1em;
     list-style: none;
@@ -519,6 +512,7 @@ ul {
 
 
 #quote {
+    display: flex;
     position: absolute;
     bottom: 1vh;
     width: 100vw;
